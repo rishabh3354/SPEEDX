@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="resource">
+    <file>resource/circle-cropped.png</file>
+    <file>resource/speedx.png</file>
+  </qresource>
+</RCC>
