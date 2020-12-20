@@ -1,11 +1,8 @@
 import platform
 import random
-
 import cpuinfo
 import psutil
 import urllib.request
-
-import speedtest
 
 
 class UtilsInfo:
@@ -18,13 +15,25 @@ class UtilsInfo:
 
     # CPU
     def get_cpu_info(self):
-        return str(cpuinfo.get_cpu_info()["brand_raw"]).split("@")[0]
+        try:
+            cpu_info = str(cpuinfo.get_cpu_info()["brand_raw"]).split("@")[0]
+        except:
+            cpu_info = "Not Available"
+        return cpu_info
 
     def get_cpu_temp(self):
-        return "Temp {0} ºC".format(dict(psutil.sensors_temperatures())["acpitz"][0].current)
+        try:
+            cpu_temp = "Temp {0} ºC".format(dict(psutil.sensors_temperatures())["acpitz"][0].current)
+        except:
+            cpu_temp = "Temp N/A"
+        return cpu_temp
 
     def get_cpu_usage_percentage(self):
-        return "{0}%".format("{:.1f}".format(psutil.cpu_percent()))
+        try:
+            cpu_percent = "{0}%".format("{:.1f}".format(psutil.cpu_percent()))
+        except:
+            cpu_percent = "88.8%"
+        return cpu_percent
 
     # RAM
     def get_ram_usage(self):

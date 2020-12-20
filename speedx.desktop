@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+GenericName=speedx
+Name=Speedx
+Type=Application
+Icon=speedx.png
+Keywords=internetspeed;systemmoniter;ramusage;cpuusage;networkbandwidth;
+Exec=speedx %F
+Categories=Utility;Qt;
+Terminal=false
+Name[en_IN]=SpeedX

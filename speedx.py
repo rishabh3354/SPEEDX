@@ -124,7 +124,7 @@ class MainWindow(QMainWindow):
         ########################################################################
         self.ui.pushButton.clicked.connect(self.credit_button_clicked)
 
-        self.ui.textEdit.setText(ABOUT_ME)
+        self.ui.textBrowser.setText(ABOUT_ME)
         self.load_cpu_data()
         self.load_ram_data()
         self.load_net_speed_data()
@@ -192,9 +192,9 @@ class MainWindow(QMainWindow):
     def credit_button_clicked(self):
         if self.ui.stackedWidget.currentIndex() == 0:
             self.ui.stackedWidget.setCurrentIndex(1)
-            self.ui.textEdit.setReadOnly(True)
-            self.ui.textEdit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-            self.ui.textEdit.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+            self.ui.textBrowser.setReadOnly(True)
+            self.ui.textBrowser.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+            self.ui.textBrowser.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         else:
             self.ui.stackedWidget.setCurrentIndex(0)
 

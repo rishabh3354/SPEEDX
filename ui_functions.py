@@ -1,6 +1,6 @@
 from PyQt5.QtGui import QColor
 
-from main import *
+from speedx import *
 
 ## ==> GLOBALS
 
