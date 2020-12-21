@@ -17,10 +17,9 @@ apps:
     command: bin/desktop-launch python3 $SNAP/speedx.py
     plugs: [home, network, network-bind, desktop,
             desktop-legacy, x11, unity7, wayland,
-            opengl, hardware-observe, network-manager-observe,
-            network-setup-observe, network-status,
-            physical-memory-control, physical-memory-observe,
-            cpu-control, core-support, system-observe]
+            opengl, hardware-observe,
+            network-status,
+            core-support]
 
     desktop: speedx.desktop
 

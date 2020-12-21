@@ -16,9 +16,9 @@ class UtilsInfo:
     # CPU
     def get_cpu_info(self):
         try:
-            cpu_info = str(cpuinfo.get_cpu_info()["brand_raw"]).split("@")[0]
+            cpu_info = str(cpuinfo.get_cpu_info()["brand_raw"]).split("@")[0][44]
         except:
-            cpu_info = "Not Available"
+            cpu_info = "CPU INFO"
         return cpu_info
 
     def get_cpu_temp(self):
