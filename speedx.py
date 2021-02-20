@@ -46,6 +46,7 @@ class MainWindow(QMainWindow):
         your_plan_button_connects(self)
         # local_plan_expiry_check
         ApplicationStartupTask().create_free_trial_offline()
+        # include closeEvent function also.
         #  ======================Your plan functionality end=============================================
 
         if not ApplicationStartupTask().is_expired_product():
