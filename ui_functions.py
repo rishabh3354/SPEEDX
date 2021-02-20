@@ -1,14 +1,13 @@
+from PyQt5 import QtCore
 from PyQt5.QtGui import QColor
-
-from speedx import *
-
-## ==> GLOBALS
-
+from PyQt5.QtWidgets import QGraphicsDropShadowEffect, QSizeGrip
+from speedx import MainWindow
 GLOBAL_STATE = 0
+
 
 class UIFunctions(MainWindow):
 
-    ## ==> MAXIMIZE RESTORE FUNCTION
+    # ==> MAXIMIZE RESTORE FUNCTION
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
@@ -31,7 +30,7 @@ class UIFunctions(MainWindow):
             self.ui.drop_shadow_layout.setContentsMargins(10, 10, 10, 10)
             self.ui.btn_maximize.setToolTip("Maximize")
 
-    ## ==> UI DEFINITIONS
+    # ==> UI DEFINITIONS
     def uiDefinitions(self):
 
         # REMOVE TITLE BAR
@@ -57,11 +56,9 @@ class UIFunctions(MainWindow):
         # CLOSE
         self.ui.btn_close.clicked.connect(lambda: self.close())
 
-        ## ==> CREATE SIZE GRIP TO RESIZE WINDOW
+        # ==> CREATE SIZE GRIP TO RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_grip)
 
-
-
-    ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTAURED
+    # RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTAURED
     def returnStatus():
         return GLOBAL_STATE

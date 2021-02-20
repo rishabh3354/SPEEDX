@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(911, 641)
+        MainWindow.resize(907, 706)
         MainWindow.setMinimumSize(QtCore.QSize(880, 600))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -374,10 +374,10 @@ class Ui_MainWindow(object):
         self.frame_label_credits.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_label_credits.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_label_credits.setObjectName("frame_label_credits")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_label_credits)
-        self.verticalLayout_3.setContentsMargins(15, 0, 0, 0)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_label_credits)
+        self.horizontalLayout_6.setContentsMargins(15, 0, 0, 0)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.pushButton = QtWidgets.QPushButton(self.frame_label_credits)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -395,8 +395,39 @@ class Ui_MainWindow(object):
 "    background-color: rgb(60, 231, 195);\n"
 "\n"
 "}")
+        self.pushButton.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/resource/resource/speedx.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton.setIcon(icon)
+        self.pushButton.setIconSize(QtCore.QSize(30, 30))
         self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_3.addWidget(self.pushButton)
+        self.horizontalLayout_6.addWidget(self.pushButton)
+        self.my_plan_button = QtWidgets.QPushButton(self.frame_label_credits)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.my_plan_button.sizePolicy().hasHeightForWidth())
+        self.my_plan_button.setSizePolicy(sizePolicy)
+        self.my_plan_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.my_plan_button.setStyleSheet("QPushButton {\n"
+"    padding: 5px;\n"
+"    color: rgb(40, 40, 40);\n"
+"    background-color: rgba(6, 60, 89, 1);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {    \n"
+"    background-color: rgb(60, 231, 195);\n"
+"\n"
+"}")
+        self.my_plan_button.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/resource/resource/my_plan.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.my_plan_button.setIcon(icon1)
+        self.my_plan_button.setIconSize(QtCore.QSize(30, 30))
+        self.my_plan_button.setObjectName("my_plan_button")
+        self.horizontalLayout_6.addWidget(self.my_plan_button)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem)
         self.horizontalLayout_2.addWidget(self.frame_label_credits)
         self.frame_grip = QtWidgets.QFrame(self.credits_bar)
         self.frame_grip.setMinimumSize(QtCore.QSize(30, 30))
@@ -436,6 +467,5 @@ class Ui_MainWindow(object):
         self.label_11.setText(_translate("MainWindow", "Total: 16 GB"))
         self.label_12.setText(_translate("MainWindow", "FREE 2.0 GB"))
         self.label_13.setText(_translate("MainWindow", "Hello how are you today!"))
-        self.pushButton.setText(_translate("MainWindow", "Design By: ©Warlord Softwares"))
         self.frame_grip.setToolTip(_translate("MainWindow", "Resize Windows"))
 import resource_rc

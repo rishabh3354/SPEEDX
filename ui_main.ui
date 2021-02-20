@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>911</width>
-    <height>641</height>
+    <width>907</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -838,7 +838,7 @@ border-radius: 10px;</string>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -878,9 +878,70 @@ QPushButton:hover {
 }</string>
                </property>
                <property name="text">
-                <string>Design By: ©Warlord Softwares</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="resource.qrc">
+                 <normaloff>:/resource/resource/speedx.png</normaloff>:/resource/resource/speedx.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
                </property>
               </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="my_plan_button">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	padding: 5px;
+	color: rgb(40, 40, 40);
+	background-color: rgba(6, 60, 89, 1);
+	border-radius: 10px;
+}
+QPushButton:hover {	
+	background-color: rgb(60, 231, 195);
+
+}</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="resource.qrc">
+                 <normaloff>:/resource/resource/my_plan.png</normaloff>:/resource/resource/my_plan.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </widget>

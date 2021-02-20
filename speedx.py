@@ -1,107 +1,31 @@
+import datetime
+import re
 import sys
-import platform
-import time
-
-import psutil
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect,
-                          QSize, QTime, QUrl, Qt, QEvent, pyqtSignal)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence,
-                         QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
-from PyQt5.QtWidgets import *
-
-# GUI FILE
+import webbrowser
+from PyQt5 import QtCore
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 from extras import ABOUT_ME
+from login_helper import check_for_local_token, get_user_data_from_local, convert_date_str_for_user_data, \
+    SignInUpdatePlan, delete_user_data_from_local, ApplicationStartupTask, LoginPage, your_plan_button_connects
+from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
 from ui_main import Ui_MainWindow
-
-# IMPORT FUNCTIONS
-from ui_functions import *
 from utility import UtilsInfo
+from your_plan_threads import LoggingInThread, SignUpThread, RefreshButtonThread
 
-
-class CpuThread(QtCore.QThread):
-    change_value = pyqtSignal(list)
-
-    def __init__(self, parent=None):
-        super(CpuThread, self).__init__(parent)
-
-    def run(self):
-        while True:
-            percentage_cpu = UtilsInfo.get_cpu_usage_percentage(self)
-            cpu_temp = UtilsInfo.get_cpu_temp(self)
-            self.change_value.emit([percentage_cpu, cpu_temp])
-            time.sleep(1)
-
-class RamThread(QtCore.QThread):
-    change_value = pyqtSignal(list)
-
-    def __init__(self, parent=None):
-        super(RamThread, self).__init__(parent)
-
-    def run(self):
-        while True:
-            ram_usage = UtilsInfo.get_ram_usage(self)
-            total_ram = UtilsInfo.get_total_ram(self)
-            available_ram = UtilsInfo.get_available_ram(self)
-            self.change_value.emit([ram_usage, total_ram, available_ram])
-            time.sleep(1)
-
-class NetSpeedThread(QtCore.QThread):
-    change_value = pyqtSignal(list)
-
-    def __init__(self, parent=None):
-        super(NetSpeedThread, self).__init__(parent)
-
-    def convert_to_gbit(self, value):
-        return str(self.convert_bytes(value)).split("-")
-
-    def send_stat(self, value):
-        return self.convert_to_gbit(value)
-
-    def convert_bytes(self, num):
-        """
-        this function will convert bytes to MB.... GB... etc
-        """
-        step_unit = 1000.0  # 1024 bad the size
-
-        for x in ['B/s', 'KB/s', 'MB/s', 'GB/s', 'TB/s']:
-            if num < step_unit:
-                return "%3.1f-%s" % (num, x)
-            num /= step_unit
-
-    def run(self):
-        old_value = 0
-        while True:
-            new_value = psutil.net_io_counters().bytes_sent + psutil.net_io_counters().bytes_recv
-            ping_data = str(UtilsInfo.check_internet_connection(self))
-            if ping_data == "Connected":
-                if old_value:
-                    self.change_value.emit([self.send_stat(new_value - old_value), ping_data])
-                old_value = new_value
-            else:
-                self.change_value.emit([["0", "B/s"], ping_data])
-            time.sleep(1)
-
-
-class DummyDataThread(QtCore.QThread):
-    change_value = pyqtSignal(list)
-
-    def __init__(self, parent=None):
-        super(DummyDataThread, self).__init__(parent)
-
-    def run(self):
-        for iter in range(0, 100):
-            self.change_value.emit(["{0}%".format(iter), str(iter)])
-            time.sleep(0.007)
+PRODUCT_NAME = "SPEEDX"
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
+        from ui_functions import UIFunctions
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        UIFunctions.uiDefinitions(self)
+        self.ui.pushButton.clicked.connect(self.credit_button_clicked)
+        self.ui.textBrowser.setText(ABOUT_ME)
 
-        # MOVE WINDOW
         def moveWindow(event):
             # RESTORE BEFORE MOVE
             if UIFunctions.returnStatus() == 1:
@@ -113,28 +37,32 @@ class MainWindow(QMainWindow):
                 self.dragPos = event.globalPos()
                 event.accept()
 
-        # SET TITLE BAR
         self.ui.title_bar.mouseMoveEvent = moveWindow
 
-        ## ==> SET UI DEFINITIONS
-        UIFunctions.uiDefinitions(self)
+        #  ======================Your plan functionality starts=============================================
+        self.msg = QMessageBox()
+        self.login_ui = LoginPage(login_user=False)
+        self.ui.my_plan_button.clicked.connect(self.my_plan)
+        your_plan_button_connects(self)
+        # local_plan_expiry_check
+        ApplicationStartupTask().create_free_trial_offline()
+        #  ======================Your plan functionality end=============================================
 
+        if not ApplicationStartupTask().is_expired_product():
+            self.load_cpu_data()
+            self.load_ram_data()
+            self.load_net_speed_data()
+            self.show()
+            self.load_annimation_data()
 
-        ## SHOW ==> MAIN WINDOW
-        ########################################################################
-        self.ui.pushButton.clicked.connect(self.credit_button_clicked)
+        else:
+            self.show()
+            self.load_annimation_data()
+            self.check_your_plan()
 
-        self.ui.textBrowser.setText(ABOUT_ME)
-        self.load_cpu_data()
-        self.load_ram_data()
-        self.load_net_speed_data()
-        self.show()
-        self.load_annimation_data()
+    def closeEvent(self, event):
+        self.login_ui.hide()
 
-
-
-    ## APP EVENTS
-    ########################################################################
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
@@ -142,7 +70,6 @@ class MainWindow(QMainWindow):
         self.dummy_data_thread = DummyDataThread()
         self.dummy_data_thread.change_value.connect(self.setProgress_dummy_data)
         self.dummy_data_thread.start()
-
 
     def load_cpu_data(self):
         self.ui.label_3.setText(UtilsInfo.get_cpu_info(self))
@@ -197,6 +124,317 @@ class MainWindow(QMainWindow):
             self.ui.textBrowser.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         else:
             self.ui.stackedWidget.setCurrentIndex(0)
+
+    # ================Login code starts=======================================
+
+    def my_plan(self):
+        self.login_ui.show()
+        token = check_for_local_token()
+        if token not in [None, ""]:
+            user_plan_data = get_user_data_from_local()
+            if user_plan_data:
+                user_plan_data = convert_date_str_for_user_data(user_plan_data)
+                self.logged_in_user_plan_page(user_plan_data)
+            else:
+                user_plan_data = dict()
+                user_plan_data['plan'] = "N/A"
+                user_plan_data['expiry_date'] = "N/A"
+                user_plan_data['created_on'] = "N/A"
+                user_plan_data['email'] = "N/A"
+                user_plan_data['product'] = PRODUCT_NAME
+                self.logged_in_user_plan_page(user_plan_data)
+        else:
+            user_plan_data = get_user_data_from_local()
+            if user_plan_data:
+                user_plan_data = convert_date_str_for_user_data(user_plan_data)
+                self.logged_out_user_plan_page(user_plan_data)
+
+    def check_your_plan(self):
+        if ApplicationStartupTask().is_expired_product():
+            self.msg.setIcon(QMessageBox.Information)
+            self.msg.setText("Plan Expired!")
+            self.msg.setInformativeText("Your trial period has expired. Please purchase a plan (75% OFF)")
+            self.msg.setWindowTitle(PRODUCT_NAME)
+            month_name = datetime.datetime.now().date().strftime("%B")
+            self.msg.setDetailedText(f"In {month_name} month we are giving bumpher"
+                                     f" discount of 75% OFF. Valid for limited period only.\nHURRY UP !!")
+            self.msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Close)
+            purchase_button = self.msg.button(QMessageBox.Ok)
+            purchase_button.setText('Purchase Now')
+            self.msg.exec_()
+            if self.msg.clickedButton() == purchase_button:
+                self.my_plan()
+                return True
+            else:
+                return True
+        else:
+            return False
+
+    def logged_in_user_plan_page(self, user_plan_data):
+        self.login_ui.ui.product_name.setText(PRODUCT_NAME)
+        self.login_ui.ui.purchase_plan_obj_2.setText(user_plan_data.get("plan", "N/A"))
+        self.login_ui.ui.expire_on_obj_2.setText(user_plan_data.get("expiry_date", "N/A"))
+        self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
+        self.login_ui.ui.hello_user_email_obj_2.setText(
+            f"Welcome {user_plan_data.get('email', 'How are you today')}")
+        self.login_ui.ui.log_out_button_obj_2.setVisible(True)
+        self.login_ui.ui.login_from_your_plan.setVisible(False)
+
+    def logged_out_user_plan_page(self, user_plan_data):
+        self.login_ui.ui.product_name.setText(PRODUCT_NAME)
+        self.login_ui.ui.purchase_plan_obj_2.setText(user_plan_data.get("plan", "N/A"))
+        self.login_ui.ui.expire_on_obj_2.setText(user_plan_data.get("expiry_date", "N/A"))
+        self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
+        self.login_ui.ui.hello_user_email_obj_2.setText('Please Signin/Register to see your updated plan')
+        self.login_ui.ui.log_out_button_obj_2.setVisible(False)
+        self.login_ui.ui.login_from_your_plan.setVisible(True)
+
+    def logout_function(self):
+        self.login_ui.ui.product_name.setText(PRODUCT_NAME)
+        self.login_ui.ui.purchase_plan_obj_2.setText("N/A")
+        self.login_ui.ui.expire_on_obj_2.setText("N/A")
+        self.login_ui.ui.activation_date_obj_2.setText("N/A")
+        self.login_ui.ui.hello_user_email_obj_2.setText("Please Signin/Register to see your plan details.")
+        self.login_ui.ui.log_out_button_obj_2.setVisible(False)
+        self.login_ui.ui.login_from_your_plan.setVisible(True)
+        self.login_ui.ui.purchase_now_button_2.setVisible(True)
+        delete_user_data_from_local()
+
+    def sign_in_user(self):
+        for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
+            items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+
+        for i in range(self.login_ui.ui.your_plan_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.your_plan_gridLayout.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+
+        for i in range(self.login_ui.ui.login_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.login_gridLayout.itemAt(i).widget()
+            if items:
+                if items.objectName() != "login_progressBar_2":
+                    items.setVisible(True)
+
+        self.login_ui.ui.home_button.setEnabled(True)
+
+    def purchase_now(self):
+        if self.login_ui.ui.log_out_button_obj_2.isVisible():
+            token = check_for_local_token()
+            warlord_soft_link = f"https://warlordsoftwares.in/warlord_soft/subscription/?product={PRODUCT_NAME}&token={token} "
+            webbrowser.open(warlord_soft_link)
+        else:
+            for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
+                items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
+                if items:
+                    if items.objectName() != "register_progressBar":
+                        items.setVisible(True)
+
+            for i in range(self.login_ui.ui.your_plan_gridLayout.count() - 1, -1, -1):
+                items = self.login_ui.ui.your_plan_gridLayout.itemAt(i).widget()
+                if items:
+                    items.setVisible(False)
+            self.login_ui.ui.home_button.setEnabled(True)
+
+    def refresh_button_function(self):
+        if self.login_ui.ui.log_out_button_obj_2.isVisible():
+            self.login_ui.ui.refresh_error.clear()
+            self.login_ui.ui.login_progressBar_2.setRange(0, 0)
+            self.login_ui.ui.login_progressBar_2.setVisible(True)
+            self.refresh_thread = RefreshButtonThread()
+            self.refresh_thread.change_value_refresh.connect(self.after_refresh)
+            self.refresh_thread.start()
+        else:
+            message = self.login_ui.ui.refresh_error.text()
+            if message != 'Please do Signin first':
+                self.login_ui.ui.refresh_error.setText("Please do Signin first")
+            else:
+                self.login_ui.ui.refresh_error.clear()
+
+    def after_refresh(self, token_str):
+        token_data = {'status': True, 'token': token_str}
+        self.after_login_step_from_signin(token_data)
+        self.login_ui.ui.login_progressBar_2.setRange(0, 1)
+        self.login_ui.ui.login_progressBar_2.setVisible(False)
+
+    def show_register_page(self):
+        for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
+            items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
+            if items:
+                if items.objectName() != "register_progressBar":
+                    items.setVisible(True)
+
+        for i in range(self.login_ui.ui.your_plan_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.your_plan_gridLayout.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+
+        for i in range(self.login_ui.ui.login_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.login_gridLayout.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+
+        self.login_ui.ui.home_button.setEnabled(True)
+
+    def register_user(self):
+        data = dict()
+        data["email"] = str(self.login_ui.ui.register_email_id_obj.text()).strip()
+        data["password"] = str(self.login_ui.ui.register_password_obj.text()).strip()
+        data["re_password"] = str(self.login_ui.ui.register_re_password_obj.text()).strip()
+
+        self.login_ui.ui.register_progressBar.setRange(0, 0)
+        self.login_ui.ui.register_progressBar.setVisible(True)
+
+        self.login_thread = SignUpThread(data)
+        self.login_thread.change_value_signup.connect(self.after_signup_step)
+        self.login_thread.start()
+
+    def after_signup_step(self, data):
+        if data["status"]:
+            self.login_thread = LoggingInThread(data)
+            self.login_thread.change_value_login.connect(self.after_login_step)
+            self.login_thread.start()
+        else:
+            error_message = data.get("message")
+            if error_message:
+                self.login_ui.ui.register_error_message.setText(error_message)
+            else:
+                self.login_ui.ui.register_error_message.setText("Internal Server Error")
+            self.login_ui.ui.register_progressBar.setRange(0, 1)
+            self.login_ui.ui.register_progressBar.setVisible(False)
+
+    def after_login_step(self, data):
+        if data["status"]:
+            self.login_ui.ui.register_progressBar.setRange(0, 1)
+            self.login_ui.ui.register_progressBar.setVisible(False)
+            self.show_your_plan_page(data)
+        else:
+            error_message = data.get("message")
+            if error_message:
+                self.login_ui.ui.register_error_message.setText(error_message)
+            else:
+                self.login_ui.ui.register_error_message.setText("Internal Server Error")
+            self.login_ui.ui.register_progressBar.setRange(0, 1)
+            self.login_ui.ui.register_progressBar.setVisible(False)
+        self.login_ui.ui.home_button.setEnabled(False)
+        self.login_ui.ui.login_from_your_plan.setVisible(False)
+
+    def after_login_step_from_signin(self, data):
+        if data["status"]:
+            self.login_ui.ui.login_progressBar_2.setRange(0, 1)
+            self.login_ui.ui.login_progressBar_2.setVisible(False)
+            self.show_your_plan_page(data, from_signin=True)
+        else:
+            error_message = data.get("message")
+            if error_message:
+                self.login_ui.ui.login_error_message_2.setText(error_message)
+            else:
+                self.login_ui.ui.login_error_message_2.setText("Internal Server Error")
+            self.login_ui.ui.login_progressBar_2.setRange(0, 1)
+            self.login_ui.ui.login_progressBar_2.setVisible(False)
+        self.login_ui.ui.home_button.setEnabled(False)
+
+    def show_home_page(self):
+        for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
+            items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+        for i in range(self.login_ui.ui.login_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.login_gridLayout.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+
+        for i in range(self.login_ui.ui.your_plan_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.your_plan_gridLayout.itemAt(i).widget()
+            if items:
+                if items.objectName() != "register_progressBar":
+                    items.setVisible(True)
+
+        self.login_ui.resize(450, 450)
+        self.my_plan()
+
+    def show_your_plan_page(self, data, from_signin=False):
+        for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
+            items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+        for i in range(self.login_ui.ui.login_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.login_gridLayout.itemAt(i).widget()
+            if items:
+                items.setVisible(False)
+
+        for i in range(self.login_ui.ui.your_plan_gridLayout.count() - 1, -1, -1):
+            items = self.login_ui.ui.your_plan_gridLayout.itemAt(i).widget()
+            if items:
+                if items.objectName() != "register_progressBar":
+                    items.setVisible(True)
+
+        SignInUpdatePlan(PRODUCT_NAME, data.get("token")).update_local_expiry_and_client_data()
+        user_plan_data = get_user_data_from_local()
+        if user_plan_data:
+            user_plan_data = convert_date_str_for_user_data(user_plan_data)
+            self.login_ui.ui.purchase_plan_obj_2.setText(user_plan_data.get("plan", "N/A"))
+            if user_plan_data.get("plan", "N/A") == 'Life Time Free Plan':
+                self.login_ui.ui.purchase_now_button_2.setVisible(False)
+            self.login_ui.ui.product_name.setText(str(user_plan_data.get("product", PRODUCT_NAME)).upper())
+            self.login_ui.ui.expire_on_obj_2.setText(user_plan_data.get("expiry_date", "N/A"))
+            self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
+            self.login_ui.ui.hello_user_email_obj_2.setText(
+                f"Hello {user_plan_data.get('email', 'How are you today')}")
+            if from_signin:
+                self.login_ui.ui.login_from_your_plan.setVisible(False)
+
+    def validate_password(self):
+        if self.login_ui.ui.register_re_password_obj.text() not in [None, ""] or \
+                self.login_ui.ui.register_password_obj.text() not in [None, ""]:
+            if not len(self.login_ui.ui.register_password_obj.text()) > 6:
+                self.login_ui.ui.register_error_message.setText("Password length is short!")
+                self.login_ui.ui.register_button_obj.setEnabled(False)
+            else:
+                if self.login_ui.ui.register_password_obj.text() != self.login_ui.ui.register_re_password_obj.text():
+                    self.login_ui.ui.register_error_message.setText("Password does not match!")
+                    self.login_ui.ui.register_button_obj.setEnabled(False)
+                else:
+                    self.login_ui.ui.register_error_message.clear()
+                    self.login_ui.ui.register_button_obj.setEnabled(True)
+                    self.validate_email()
+
+    def validate_email(self):
+        if self.login_ui.ui.register_email_id_obj.text() not in [None, ""]:
+            regex = '^[a-z0-9A-Z]+[\._]?[a-z0-9A-Z]+[@]\w+-?\w+[.]\w{2,3}$'
+            if re.search(regex, self.login_ui.ui.register_email_id_obj.text()):
+                self.login_ui.ui.register_error_message.clear()
+                self.login_ui.ui.register_button_obj.setEnabled(True)
+            else:
+                self.login_ui.ui.register_error_message.setText("Enter valid email address!")
+                self.login_ui.ui.register_button_obj.setEnabled(False)
+
+    def validate_login_email(self):
+        if self.login_ui.ui.login_email_obj.text() not in [None, ""]:
+            regex = '^[a-z0-9A-Z]+[\._]?[a-z0-9A-Z]+[@]\w+-?\w+[.]\w{2,3}$'
+            if re.search(regex, self.login_ui.ui.login_email_obj.text()):
+                self.login_ui.ui.login_error_message_2.clear()
+                self.login_ui.ui.login_from_login.setEnabled(True)
+            else:
+                self.login_ui.ui.login_error_message_2.setText("Enter valid email address!")
+                self.login_ui.ui.login_from_login.setEnabled(False)
+
+    def after_login_show_your_plan(self):
+
+        self.login_ui.ui.login_progressBar_2.setRange(0, 0)
+        self.login_ui.ui.login_progressBar_2.setVisible(True)
+        data = {"data": {"email": str(self.login_ui.ui.login_email_obj.text()).strip(),
+                         "password": str(self.login_ui.ui.login_password_obj.text()).strip()}}
+        self.login_thread = LoggingInThread(data)
+        self.login_thread.change_value_login.connect(self.after_login_step_from_signin)
+        self.login_thread.start()
+
+    def redirect_to_warlord_softwares(self):
+        warlord_soft_link = "https://warlordsoftwares.in/"
+        webbrowser.open(warlord_soft_link)
+
+    #  ==============================Login code ends==================================================
 
 
 if __name__ == "__main__":
