@@ -7,7 +7,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 from extras import ABOUT_ME
 from login_helper import check_for_local_token, get_user_data_from_local, convert_date_str_for_user_data, \
-    SignInUpdatePlan, delete_user_data_from_local, ApplicationStartupTask, LoginPage, your_plan_button_connects
+    SignInUpdatePlan, delete_user_data_from_local, ApplicationStartupTask, LoginPage, your_plan_button_connects, \
+    notify_for_expiry
 from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
 from ui_main import Ui_MainWindow
 from utility import UtilsInfo
@@ -48,6 +49,7 @@ class MainWindow(QMainWindow):
         ApplicationStartupTask().create_free_trial_offline()
         # include closeEvent function also.
         # include requests, cryptography python package in snapcraft.yaml file.
+        # check your check_your_plan function.
         #  ======================Your plan functionality end=============================================
 
         if not ApplicationStartupTask().is_expired_product():
@@ -175,16 +177,19 @@ class MainWindow(QMainWindow):
     def logged_in_user_plan_page(self, user_plan_data):
         self.login_ui.ui.product_name.setText(PRODUCT_NAME)
         self.login_ui.ui.purchase_plan_obj_2.setText(user_plan_data.get("plan", "N/A"))
+        if notify_for_expiry(user_plan_data.get("expiry_date")):
+            self.login_ui.ui.refresh_error.setText("YOUR PLAN HAS EXPIRED, PLEASE BUY A PLAN")
         self.login_ui.ui.expire_on_obj_2.setText(user_plan_data.get("expiry_date", "N/A"))
         self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
-        self.login_ui.ui.hello_user_email_obj_2.setText(
-            f"Welcome {user_plan_data.get('email', 'How are you today')}")
+        self.login_ui.ui.hello_user_email_obj_2.setText(f"Welcome {user_plan_data.get('email', 'How are you today')}")
         self.login_ui.ui.log_out_button_obj_2.setVisible(True)
         self.login_ui.ui.login_from_your_plan.setVisible(False)
 
     def logged_out_user_plan_page(self, user_plan_data):
         self.login_ui.ui.product_name.setText(PRODUCT_NAME)
         self.login_ui.ui.purchase_plan_obj_2.setText(user_plan_data.get("plan", "N/A"))
+        if notify_for_expiry(user_plan_data.get("expiry_date")):
+            self.login_ui.ui.refresh_error.setText("YOUR PLAN HAS EXPIRED, PLEASE BUY A PLAN")
         self.login_ui.ui.expire_on_obj_2.setText(user_plan_data.get("expiry_date", "N/A"))
         self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
         self.login_ui.ui.hello_user_email_obj_2.setText('Please Signin/Register to see your updated plan')
@@ -382,8 +387,7 @@ class MainWindow(QMainWindow):
             self.login_ui.ui.product_name.setText(str(user_plan_data.get("product", PRODUCT_NAME)).upper())
             self.login_ui.ui.expire_on_obj_2.setText(user_plan_data.get("expiry_date", "N/A"))
             self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
-            self.login_ui.ui.hello_user_email_obj_2.setText(
-                f"Hello {user_plan_data.get('email', 'How are you today')}")
+            self.login_ui.ui.hello_user_email_obj_2.setText(f"Welcome {user_plan_data.get('email', 'How are you today')}")
             if from_signin:
                 self.login_ui.ui.login_from_your_plan.setVisible(False)
 

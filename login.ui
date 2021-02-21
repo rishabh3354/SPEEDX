@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>545</width>
-    <height>1132</height>
+    <height>1212</height>
    </rect>
   </property>
   <property name="font">
@@ -348,7 +348,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Signout</string>
+        <string>SIGNOUT</string>
        </property>
       </widget>
      </item>
@@ -411,7 +411,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Signin</string>
+        <string>SIGNIN</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -432,10 +432,11 @@ QPushButton:hover {
        <property name="styleSheet">
         <string notr="true">color: rgb(239, 41, 41);
 qproperty-alignment: AlignCenter;
+font-weight: bold;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ef2929;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ef2929;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -574,7 +575,7 @@ padding: 5px;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; color:#eeeeec;&quot;&gt;Email ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#eeeeec;&quot;&gt;Email ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -591,7 +592,7 @@ padding: 5px;
 	padding: 5px;
 	color: rgb(40, 40, 40);
 	background-color: rgb(60, 231, 195);
-
+	font-weight: bold;
 	border-radius: 12px;
 }
 </string>
@@ -632,7 +633,7 @@ padding: 5px;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; color:#eeeeec;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#eeeeec;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -692,7 +693,7 @@ border-radius: 10px;
 	padding: 5px;
 	color: rgb(40, 40, 40);
 	background-color: rgb(60, 231, 195);
-
+	font-weight: bold;
 	border-radius: 12px;
 }
 </string>
@@ -733,7 +734,7 @@ border-radius: 10px;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; color:#eeeeec;&quot;&gt;Re-password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#eeeeec;&quot;&gt;Re-password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -764,7 +765,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Already registered ? Signin</string>
+        <string>Already registered ? SIGNIN</string>
        </property>
       </widget>
      </item>
@@ -781,8 +782,8 @@ QPushButton:hover {
 	padding: 5px;
 	color: rgb(40, 40, 40);
 	background-color: rgb(60, 231, 195);
-
 	border-radius: 12px;
+	font-weight: bold;
 }
 </string>
        </property>
@@ -804,7 +805,7 @@ QPushButton:hover {
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-	padding: 5px;
+	padding: 10px;
 	background-color: rgba(50, 168, 50, 1);
 	border-radius: 10px;
 color: white;
@@ -822,7 +823,7 @@ QPushButton:disabled {
 }</string>
        </property>
        <property name="text">
-        <string>Signup</string>
+        <string>SIGNUP</string>
        </property>
        <property name="autoDefault">
         <bool>true</bool>
@@ -867,10 +868,11 @@ QPushButton:disabled {
        <property name="styleSheet">
         <string notr="true">color: rgb(239, 41, 41);
 qproperty-alignment: AlignCenter;
+font-weight: bold;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ef2929;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ef2929;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -933,7 +935,7 @@ qproperty-alignment: AlignCenter;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; color:#eeeeec;&quot;&gt;Email ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#eeeeec;&quot;&gt;Email ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -964,7 +966,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Don't have account ? Register</string>
+        <string>Don't have account ? REGISTER</string>
        </property>
       </widget>
      </item>
@@ -984,7 +986,7 @@ QPushButton:hover {
 	padding: 5px;
 	color: rgb(40, 40, 40);
 	background-color: rgb(60, 231, 195);
-
+	font-weight: bold;
 	border-radius: 12px;
 }
 </string>
@@ -1007,7 +1009,7 @@ QPushButton:hover {
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-	padding: 5px;
+	padding: 10px;
 	background-color: rgba(50, 168, 50, 1);
 	border-radius: 10px;
 color: white;
@@ -1024,7 +1026,7 @@ QPushButton:disabled {
 }</string>
        </property>
        <property name="text">
-        <string>Signin</string>
+        <string>SIGNIN</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -1066,7 +1068,7 @@ QPushButton:disabled {
 	padding: 5px;
 	color: rgb(40, 40, 40);
 	background-color: rgb(60, 231, 195);
-
+	font-weight: bold;
 	border-radius: 12px;
 }
 </string>
@@ -1094,7 +1096,7 @@ QPushButton:disabled {
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; color:#eeeeec;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#eeeeec;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -1155,10 +1157,11 @@ border-radius: 10px;
        <property name="styleSheet">
         <string notr="true">color: rgb(239, 41, 41);
 qproperty-alignment: AlignCenter;
+font-weight: bold;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ef2929;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ef2929;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>

@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_LoginForm(object):
     def setupUi(self, LoginForm):
         LoginForm.setObjectName("LoginForm")
-        LoginForm.resize(545, 1132)
+        LoginForm.resize(545, 1212)
         font = QtGui.QFont()
         font.setFamily("Sans")
         LoginForm.setFont(font)
@@ -263,6 +263,7 @@ class Ui_LoginForm(object):
         self.refresh_error.setAutoFillBackground(False)
         self.refresh_error.setStyleSheet("color: rgb(239, 41, 41);\n"
 "qproperty-alignment: AlignCenter;\n"
+"font-weight: bold;\n"
 "")
         self.refresh_error.setObjectName("refresh_error")
         self.your_plan_gridLayout.addWidget(self.refresh_error, 14, 0, 1, 3)
@@ -366,7 +367,7 @@ class Ui_LoginForm(object):
 "    padding: 5px;\n"
 "    color: rgb(40, 40, 40);\n"
 "    background-color: rgb(60, 231, 195);\n"
-"\n"
+"    font-weight: bold;\n"
 "    border-radius: 12px;\n"
 "}\n"
 "")
@@ -423,7 +424,7 @@ class Ui_LoginForm(object):
 "    padding: 5px;\n"
 "    color: rgb(40, 40, 40);\n"
 "    background-color: rgb(60, 231, 195);\n"
-"\n"
+"    font-weight: bold;\n"
 "    border-radius: 12px;\n"
 "}\n"
 "")
@@ -473,8 +474,8 @@ class Ui_LoginForm(object):
 "    padding: 5px;\n"
 "    color: rgb(40, 40, 40);\n"
 "    background-color: rgb(60, 231, 195);\n"
-"\n"
 "    border-radius: 12px;\n"
+"    font-weight: bold;\n"
 "}\n"
 "")
         self.register_email_id_obj.setObjectName("register_email_id_obj")
@@ -487,7 +488,7 @@ class Ui_LoginForm(object):
         self.register_button_obj.setSizePolicy(sizePolicy)
         self.register_button_obj.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.register_button_obj.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
+"    padding: 10px;\n"
 "    background-color: rgba(50, 168, 50, 1);\n"
 "    border-radius: 10px;\n"
 "color: white;\n"
@@ -528,6 +529,7 @@ class Ui_LoginForm(object):
         self.register_error_message.setAutoFillBackground(False)
         self.register_error_message.setStyleSheet("color: rgb(239, 41, 41);\n"
 "qproperty-alignment: AlignCenter;\n"
+"font-weight: bold;\n"
 "")
         self.register_error_message.setObjectName("register_error_message")
         self.register_gridLayout_2.addWidget(self.register_error_message, 6, 1, 1, 1)
@@ -592,7 +594,7 @@ class Ui_LoginForm(object):
 "    padding: 5px;\n"
 "    color: rgb(40, 40, 40);\n"
 "    background-color: rgb(60, 231, 195);\n"
-"\n"
+"    font-weight: bold;\n"
 "    border-radius: 12px;\n"
 "}\n"
 "")
@@ -606,7 +608,7 @@ class Ui_LoginForm(object):
         self.login_from_login.setSizePolicy(sizePolicy)
         self.login_from_login.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.login_from_login.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
+"    padding: 10px;\n"
 "    background-color: rgba(50, 168, 50, 1);\n"
 "    border-radius: 10px;\n"
 "color: white;\n"
@@ -638,7 +640,7 @@ class Ui_LoginForm(object):
 "    padding: 5px;\n"
 "    color: rgb(40, 40, 40);\n"
 "    background-color: rgb(60, 231, 195);\n"
-"\n"
+"    font-weight: bold;\n"
 "    border-radius: 12px;\n"
 "}\n"
 "")
@@ -693,6 +695,7 @@ class Ui_LoginForm(object):
         self.login_error_message_2.setAutoFillBackground(False)
         self.login_error_message_2.setStyleSheet("color: rgb(239, 41, 41);\n"
 "qproperty-alignment: AlignCenter;\n"
+"font-weight: bold;\n"
 "")
         self.login_error_message_2.setObjectName("login_error_message_2")
         self.login_gridLayout.addWidget(self.login_error_message_2, 5, 1, 1, 1)
@@ -714,30 +717,30 @@ class Ui_LoginForm(object):
         self.refresh_button.setText(_translate("LoginForm", "Refresh"))
         self.your_plan_2.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600; color:#eeeeec;\">YOUR PLAN</span></p></body></html>"))
         self.purchase_now_button_2.setText(_translate("LoginForm", "BUY NOW (75% OFF)"))
-        self.log_out_button_obj_2.setText(_translate("LoginForm", "Signout"))
+        self.log_out_button_obj_2.setText(_translate("LoginForm", "SIGNOUT"))
         self.activation_date_obj_2.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">N/A</span></p></body></html>"))
-        self.login_from_your_plan.setText(_translate("LoginForm", "Signin"))
-        self.refresh_error.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" color:#ef2929;\"><br/></span></p></body></html>"))
+        self.login_from_your_plan.setText(_translate("LoginForm", "SIGNIN"))
+        self.refresh_error.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600; color:#ef2929;\"><br/></span></p></body></html>"))
         self.label_10.setText(_translate("LoginForm", "<html><head/><body><p><span style=\" font-weight:600; color:#eeeeec;\">Your Plan</span></p></body></html>"))
         self.label_9.setText(_translate("LoginForm", "<html><head/><body><p><span style=\" font-weight:600; color:#eeeeec;\">Plan Activated on</span></p></body></html>"))
         self.label_8.setText(_translate("LoginForm", "<html><head/><body><p><span style=\" font-weight:600; color:#eeeeec;\">Plan Expires On</span></p></body></html>"))
         self.product_name.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">PDF2GO</span></p></body></html>"))
         self.label_14.setText(_translate("LoginForm", "<html><head/><body><p><span style=\" font-weight:600; color:#eeeeec;\">App Name</span></p></body></html>"))
-        self.label_3.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">Email ID</span></p></body></html>"))
+        self.label_3.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600; color:#eeeeec;\">Email ID</span></p></body></html>"))
         self.register_password_obj.setPlaceholderText(_translate("LoginForm", "Password"))
-        self.label_11.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">Password</span></p></body></html>"))
+        self.label_11.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600; color:#eeeeec;\">Password</span></p></body></html>"))
         self.register_re_password_obj.setPlaceholderText(_translate("LoginForm", "Re-password"))
-        self.label_12.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">Re-password</span></p></body></html>"))
-        self.already_registered_signin.setText(_translate("LoginForm", "Already registered ? Signin"))
+        self.label_12.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600; color:#eeeeec;\">Re-password</span></p></body></html>"))
+        self.already_registered_signin.setText(_translate("LoginForm", "Already registered ? SIGNIN"))
         self.register_email_id_obj.setPlaceholderText(_translate("LoginForm", "Your Email"))
-        self.register_button_obj.setText(_translate("LoginForm", "Signup"))
+        self.register_button_obj.setText(_translate("LoginForm", "SIGNUP"))
         self.register_obj.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600; color:#eeeeec;\">QUICK SIGNUP</span></p><p align=\"center\"><span style=\" font-size:8pt; font-weight:600; color:#eeeeec;\">(hardly takes 10 sec)</span></p></body></html>"))
-        self.register_error_message.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" color:#ef2929;\"><br/></span></p></body></html>"))
+        self.register_error_message.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600; color:#ef2929;\"><br/></span></p></body></html>"))
         self.login_obj.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600; color:#eeeeec;\">QUICK SIGNIN</span></p><p align=\"center\"><span style=\" font-size:16pt; font-weight:600; color:#eeeeec;\"/><span style=\" font-size:8pt; font-weight:600; color:#eeeeec;\">(hardly takes 5 sec)</span></p></body></html>"))
-        self.label_4.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">Email ID</span></p></body></html>"))
-        self.dont_have_account_register.setText(_translate("LoginForm", "Don\'t have account ? Register"))
+        self.label_4.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600; color:#eeeeec;\">Email ID</span></p></body></html>"))
+        self.dont_have_account_register.setText(_translate("LoginForm", "Don\'t have account ? REGISTER"))
         self.login_password_obj.setPlaceholderText(_translate("LoginForm", "Password"))
-        self.login_from_login.setText(_translate("LoginForm", "Signin"))
+        self.login_from_login.setText(_translate("LoginForm", "SIGNIN"))
         self.login_email_obj.setPlaceholderText(_translate("LoginForm", "Your Email"))
-        self.label_13.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" color:#eeeeec;\">Password</span></p></body></html>"))
-        self.login_error_message_2.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" color:#ef2929;\"><br/></span></p></body></html>"))
+        self.label_13.setText(_translate("LoginForm", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600; color:#eeeeec;\">Password</span></p></body></html>"))
+        self.login_error_message_2.setText(_translate("LoginForm", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600; color:#ef2929;\"><br/></span></p></body></html>"))

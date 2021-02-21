@@ -441,7 +441,7 @@ def convert_date_str_for_user_data(user_data):
             created_on = user_data.get("created_on")
             plan = user_data.get("plan")
             if plan == "Life Time Free Plan":
-                user_data["expiry_date"] = "Life Time"
+                user_data["expiry_date"] = "Life Time Free"
             elif expiry_date:
                 user_data["expiry_date"] = convert_date_str(expiry_date)
             if created_on:
@@ -488,3 +488,16 @@ def your_plan_button_connects(self):
     self.login_ui.ui.dont_have_account_register.clicked.connect(self.show_register_page)
     self.login_ui.ui.home_button.clicked.connect(self.show_home_page)
     self.login_ui.ui.warlord_software_button.clicked.connect(self.redirect_to_warlord_softwares)
+
+
+def notify_for_expiry(expiry_date):
+    try:
+        if expiry_date:
+            today_date = datetime.datetime.now().date()
+            expiry_date = datetime.datetime.strptime(expiry_date, '%d %b %Y').date()
+            if today_date >= expiry_date:
+                return True
+        else:
+            return False
+    except Exception as e:
+        return False
