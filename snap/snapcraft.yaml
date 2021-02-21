@@ -84,5 +84,5 @@ parts:
       plugin: python
       python-version: python3
       source: .
-      python-packages: [PyQt5==5.14, psutil, py-cpuinfo]
+      python-packages: [PyQt5==5.14, psutil, py-cpuinfo, requests, cryptography]
       build-attributes: [ keep-execstack ]

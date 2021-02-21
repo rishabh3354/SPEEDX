@@ -47,6 +47,7 @@ class MainWindow(QMainWindow):
         # local_plan_expiry_check
         ApplicationStartupTask().create_free_trial_offline()
         # include closeEvent function also.
+        # include requests, cryptography python package in snapcraft.yaml file.
         #  ======================Your plan functionality end=============================================
 
         if not ApplicationStartupTask().is_expired_product():
