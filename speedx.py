@@ -320,6 +320,9 @@ class MainWindow(QMainWindow):
             self.login_ui.ui.register_progressBar.setRange(0, 1)
             self.login_ui.ui.register_progressBar.setVisible(False)
             self.show_your_plan_page(data)
+            token = check_for_local_token()
+            warlord_soft_link = f"https://warlordsoftwares.in/warlord_soft/subscription/?product={PRODUCT_NAME}&token={token} "
+            webbrowser.open(warlord_soft_link)
         else:
             error_message = data.get("message")
             if error_message:
