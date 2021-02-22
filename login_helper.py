@@ -47,6 +47,7 @@ class LoginPage(QWidget):
         self.ui.register_button_obj.setEnabled(False)
         self.ui.register_progressBar.setVisible(False)
         self.ui.login_progressBar_2.setVisible(False)
+        self.ui.login_from_login.setEnabled(False)
         self.ui.home_button.setEnabled(False)
         self.ui.register_password_obj.setEchoMode(QtWidgets.QLineEdit.Password)
         self.ui.register_re_password_obj.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -60,7 +61,7 @@ class LoginPage(QWidget):
             items = self.ui.login_gridLayout.itemAt(i).widget()
             if items:
                 items.setVisible(False)
-        self.resize(500, 660)
+        self.resize(500, 600)
 
 
 class ApplicationStartupTask:
@@ -481,7 +482,9 @@ def your_plan_button_connects(self):
     self.login_ui.ui.register_re_password_obj.textChanged.connect(self.validate_password)
     self.login_ui.ui.register_password_obj.textChanged.connect(self.validate_password)
     self.login_ui.ui.register_email_id_obj.textChanged.connect(self.validate_email)
+    # login email validation
     self.login_ui.ui.login_email_obj.textChanged.connect(self.validate_login_email)
+    self.login_ui.ui.login_password_obj.textChanged.connect(self.validate_login_password)
     self.login_ui.ui.register_button_obj.clicked.connect(self.register_user)
     self.login_ui.ui.login_from_your_plan.clicked.connect(self.sign_in_user)
     self.login_ui.ui.already_registered_signin.clicked.connect(self.sign_in_user)

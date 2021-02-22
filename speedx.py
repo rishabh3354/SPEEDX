@@ -194,7 +194,6 @@ class MainWindow(QMainWindow):
         self.login_ui.ui.activation_date_obj_2.setText(user_plan_data.get("created_on", "N/A"))
         self.login_ui.ui.hello_user_email_obj_2.setText('Please Signin/Register to see your updated plan')
         self.login_ui.ui.log_out_button_obj_2.setVisible(False)
-        self.login_ui.ui.login_from_your_plan.setVisible(True)
 
     def logout_function(self):
         self.login_ui.ui.product_name.setText(PRODUCT_NAME)
@@ -232,17 +231,22 @@ class MainWindow(QMainWindow):
             warlord_soft_link = f"https://warlordsoftwares.in/warlord_soft/subscription/?product={PRODUCT_NAME}&token={token} "
             webbrowser.open(warlord_soft_link)
         else:
-            for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
-                items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
-                if items:
-                    if items.objectName() != "register_progressBar":
-                        items.setVisible(True)
-
             for i in range(self.login_ui.ui.your_plan_gridLayout.count() - 1, -1, -1):
                 items = self.login_ui.ui.your_plan_gridLayout.itemAt(i).widget()
                 if items:
                     items.setVisible(False)
             self.login_ui.ui.home_button.setEnabled(True)
+
+            for i in range(self.login_ui.ui.login_gridLayout.count() - 1, -1, -1):
+                items = self.login_ui.ui.login_gridLayout.itemAt(i).widget()
+                if items:
+                    items.setVisible(False)
+
+            for i in range(self.login_ui.ui.register_gridLayout_2.count() - 1, -1, -1):
+                items = self.login_ui.ui.register_gridLayout_2.itemAt(i).widget()
+                if items:
+                    if items.objectName() != "register_progressBar":
+                        items.setVisible(True)
 
     def refresh_button_function(self):
         if self.login_ui.ui.log_out_button_obj_2.isVisible():
@@ -394,7 +398,7 @@ class MainWindow(QMainWindow):
     def validate_password(self):
         if self.login_ui.ui.register_re_password_obj.text() not in [None, ""] or \
                 self.login_ui.ui.register_password_obj.text() not in [None, ""]:
-            if not len(self.login_ui.ui.register_password_obj.text()) > 6:
+            if not len(self.login_ui.ui.register_password_obj.text()) > 3:
                 self.login_ui.ui.register_error_message.setText("Password length is short!")
                 self.login_ui.ui.register_button_obj.setEnabled(False)
             else:
@@ -421,10 +425,22 @@ class MainWindow(QMainWindow):
             regex = '^[a-z0-9A-Z]+[\._]?[a-z0-9A-Z]+[@]\w+-?\w+[.]\w{2,3}$'
             if re.search(regex, self.login_ui.ui.login_email_obj.text()):
                 self.login_ui.ui.login_error_message_2.clear()
-                self.login_ui.ui.login_from_login.setEnabled(True)
+                if self.login_ui.ui.login_password_obj.text() != "":
+                    self.login_ui.ui.login_from_login.setEnabled(True)
             else:
                 self.login_ui.ui.login_error_message_2.setText("Enter valid email address!")
                 self.login_ui.ui.login_from_login.setEnabled(False)
+
+    def validate_login_password(self):
+        if self.login_ui.ui.login_password_obj.text() != "":
+            if self.login_ui.ui.login_email_obj.text() not in [None, ""]:
+                regex = '^[a-z0-9A-Z]+[\._]?[a-z0-9A-Z]+[@]\w+-?\w+[.]\w{2,3}$'
+                if re.search(regex, self.login_ui.ui.login_email_obj.text()):
+                    self.login_ui.ui.login_error_message_2.clear()
+                    self.login_ui.ui.login_from_login.setEnabled(True)
+        else:
+            self.login_ui.ui.login_error_message_2.setText("Password cannot be empty !")
+            self.login_ui.ui.login_from_login.setEnabled(False)
 
     def after_login_show_your_plan(self):
 
