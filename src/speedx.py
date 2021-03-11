@@ -10,7 +10,7 @@ from login_helper import check_for_local_token, get_user_data_from_local, conver
     SignInUpdatePlan, delete_user_data_from_local, ApplicationStartupTask, LoginPage, your_plan_button_connects, \
     notify_for_expiry
 from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
-from src.style import *
+from style import theme_dict, button_dict
 from ui_main import Ui_MainWindow
 from utility import UtilsInfo
 from your_plan_threads import LoggingInThread, SignUpThread, RefreshButtonThread
