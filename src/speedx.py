@@ -68,14 +68,15 @@ class MainWindow(QMainWindow):
             self.check_your_plan()
 
     def change_theme(self):
-        if self.count == 5:
-            self.count = 1
-        self.ui.drop_shadow_frame.setStyleSheet(theme_dict.get(self.count))
-        self.ui.pushButton.setStyleSheet(button_dict.get(self.count))
-        self.ui.theme_button.setStyleSheet(button_dict.get(self.count))
-        self.ui.my_plan_button.setStyleSheet(button_dict.get(self.count))
-        self.ui.textBrowser.setStyleSheet(theme_dict.get(self.count))
-        self.count += 1
+        pass
+        # if self.count == 5:
+        #     self.count = 1
+        # self.ui.drop_shadow_frame.setStyleSheet(theme_dict.get(self.count))
+        # self.ui.pushButton.setStyleSheet(button_dict.get(self.count))
+        # self.ui.theme_button.setStyleSheet(button_dict.get(self.count))
+        # self.ui.my_plan_button.setStyleSheet(button_dict.get(self.count))
+        # self.ui.textBrowser.setStyleSheet(theme_dict.get(self.count))
+        # self.count += 1
 
     def closeEvent(self, event):
         self.login_ui.hide()
