@@ -22,6 +22,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         from ui_functions import UIFunctions
         QMainWindow.__init__(self)
+        self.setWindowFlag(Qt.FramelessWindowHint)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         UIFunctions.uiDefinitions(self)
