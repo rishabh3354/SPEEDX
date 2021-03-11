@@ -10,6 +10,7 @@ from login_helper import check_for_local_token, get_user_data_from_local, conver
     SignInUpdatePlan, delete_user_data_from_local, ApplicationStartupTask, LoginPage, your_plan_button_connects, \
     notify_for_expiry
 from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
+from src.style import *
 from ui_main import Ui_MainWindow
 from utility import UtilsInfo
 from your_plan_threads import LoggingInThread, SignUpThread, RefreshButtonThread
@@ -25,7 +26,9 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         UIFunctions.uiDefinitions(self)
         self.ui.pushButton.clicked.connect(self.credit_button_clicked)
+        self.ui.theme_button.clicked.connect(self.change_theme)
         self.ui.textBrowser.setText(ABOUT_ME)
+        self.count = 1  # theme set counter
 
         def moveWindow(event):
             # RESTORE BEFORE MOVE
@@ -63,6 +66,16 @@ class MainWindow(QMainWindow):
             self.show()
             self.load_annimation_data()
             self.check_your_plan()
+
+    def change_theme(self):
+        if self.count == 5:
+            self.count = 1
+        self.ui.drop_shadow_frame.setStyleSheet(theme_dict.get(self.count))
+        self.ui.pushButton.setStyleSheet(button_dict.get(self.count))
+        self.ui.theme_button.setStyleSheet(button_dict.get(self.count))
+        self.ui.my_plan_button.setStyleSheet(button_dict.get(self.count))
+        self.ui.textBrowser.setStyleSheet(theme_dict.get(self.count))
+        self.count += 1
 
     def closeEvent(self, event):
         self.login_ui.hide()

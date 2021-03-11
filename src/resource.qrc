@@ -3,5 +3,6 @@
     <file>resource/circle-cropped.png</file>
     <file>resource/speedx.png</file>
     <file>resource/my_plan.png</file>
+    <file>resource/change-theme.png</file>
   </qresource>
 </RCC>

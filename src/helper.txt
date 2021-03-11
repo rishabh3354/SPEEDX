@@ -8,6 +8,7 @@ https://github.com/Pythondeveloper6
 https://www.visualwatermark.com/add-text-to-photos/
 
 
+pyuic5 ui_main.ui > ui_main.py
 
 
 
