@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>880</width>
-    <height>600</height>
+    <width>907</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -36,8 +36,9 @@
     <item>
      <widget class="QFrame" name="drop_shadow_frame">
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 1), stop:0.521368 rgba(6, 60, 89, 1)); 
-border-radius: 10px;</string>
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 1), stop:0.521368 rgba(6, 60, 89, 1));
+border-radius: 10px;
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -142,7 +143,7 @@ border-radius: 10px;</string>
                 <string notr="true">color: rgb(60, 231, 195);</string>
                </property>
                <property name="text">
-                <string>SpeedX™</string>
+                <string>SpeedX™  - Color version</string>
                </property>
               </widget>
              </item>
@@ -164,38 +165,6 @@ border-radius: 10px;</string>
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <item>
-              <widget class="QPushButton" name="btn_minimize">
-               <property name="minimumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>17</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Minimize</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	border: none;
-	border-radius: 8px;		
-	background-color: rgb(255, 170, 0);
-}
-QPushButton:hover {	
-	background-color: rgba(255, 170, 0, 150);
-}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
              <item>
               <widget class="QPushButton" name="btn_maximize">
                <property name="minimumSize">
@@ -221,6 +190,38 @@ QPushButton:hover {
 }
 QPushButton:hover {	
 	background-color: rgba(85, 255, 127, 150);
+}</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_minimize">
+               <property name="minimumSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>17</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Minimize</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	border: none;
+	border-radius: 8px;		
+	background-color: rgb(255, 170, 0);
+}
+QPushButton:hover {	
+	background-color: rgba(255, 170, 0, 150);
 }</string>
                </property>
                <property name="text">
@@ -739,17 +740,14 @@ color: rgb(60, 231, 195);</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Ubuntu</family>
-                        <pointsize>16</pointsize>
-                        <weight>50</weight>
-                        <italic>false</italic>
-                        <bold>false</bold>
+                        <family>Roboto Light</family>
+                        <pointsize>14</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color: rgb(211, 215, 207);
-font: 16pt &quot;Ubuntu&quot;;
-</string>
+                       <string notr="true">color: rgb(220, 220, 220);
+background-color: rgb(33, 33, 75);
+border-radius: 10px;</string>
                       </property>
                       <property name="text">
                        <string>Hello how are you today!</string>
@@ -923,38 +921,6 @@ QPushButton:hover {
                <property name="icon">
                 <iconset resource="resource.qrc">
                  <normaloff>:/resource/resource/my_plan.png</normaloff>:/resource/resource/my_plan.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>30</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="theme_button">
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	padding: 5px;
-	color: rgb(40, 40, 40);
-	background-color: rgba(6, 60, 89, 1);
-	border-radius: 10px;
-}
-QPushButton:hover {	
-	background-color: rgb(60, 231, 195);
-
-}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resource.qrc">
-                 <normaloff>:/resource/resource/change-theme.png</normaloff>:/resource/resource/change-theme.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
