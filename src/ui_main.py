@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(907, 706)
+        MainWindow.resize(880, 600)
         MainWindow.setMinimumSize(QtCore.QSize(880, 600))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -21,9 +21,8 @@ class Ui_MainWindow(object):
         self.drop_shadow_layout.setContentsMargins(10, 10, 10, 10)
         self.drop_shadow_layout.setObjectName("drop_shadow_layout")
         self.drop_shadow_frame = QtWidgets.QFrame(self.centralwidget)
-        self.drop_shadow_frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 1), stop:0.521368 rgba(6, 60, 89, 1));\n"
-"border-radius: 10px;\n"
-"")
+        self.drop_shadow_frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 1), stop:0.521368 rgba(6, 60, 89, 1)); \n"
+"border-radius: 10px;")
         self.drop_shadow_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.drop_shadow_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.drop_shadow_frame.setObjectName("drop_shadow_frame")
@@ -70,20 +69,6 @@ class Ui_MainWindow(object):
         self.frame_btns.setObjectName("frame_btns")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_btns)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.btn_maximize = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_maximize.setMinimumSize(QtCore.QSize(16, 16))
-        self.btn_maximize.setMaximumSize(QtCore.QSize(17, 17))
-        self.btn_maximize.setStyleSheet("QPushButton {\n"
-"    border: none;\n"
-"    border-radius: 8px;    \n"
-"    background-color: rgb(85, 255, 127);\n"
-"}\n"
-"QPushButton:hover {    \n"
-"    background-color: rgba(85, 255, 127, 150);\n"
-"}")
-        self.btn_maximize.setText("")
-        self.btn_maximize.setObjectName("btn_maximize")
-        self.horizontalLayout_3.addWidget(self.btn_maximize)
         self.btn_minimize = QtWidgets.QPushButton(self.frame_btns)
         self.btn_minimize.setMinimumSize(QtCore.QSize(16, 16))
         self.btn_minimize.setMaximumSize(QtCore.QSize(17, 17))
@@ -98,6 +83,20 @@ class Ui_MainWindow(object):
         self.btn_minimize.setText("")
         self.btn_minimize.setObjectName("btn_minimize")
         self.horizontalLayout_3.addWidget(self.btn_minimize)
+        self.btn_maximize = QtWidgets.QPushButton(self.frame_btns)
+        self.btn_maximize.setMinimumSize(QtCore.QSize(16, 16))
+        self.btn_maximize.setMaximumSize(QtCore.QSize(17, 17))
+        self.btn_maximize.setStyleSheet("QPushButton {\n"
+"    border: none;\n"
+"    border-radius: 8px;    \n"
+"    background-color: rgb(85, 255, 127);\n"
+"}\n"
+"QPushButton:hover {    \n"
+"    background-color: rgba(85, 255, 127, 150);\n"
+"}")
+        self.btn_maximize.setText("")
+        self.btn_maximize.setObjectName("btn_maximize")
+        self.horizontalLayout_3.addWidget(self.btn_maximize)
         self.btn_close = QtWidgets.QPushButton(self.frame_btns)
         self.btn_close.setMinimumSize(QtCore.QSize(16, 16))
         self.btn_close.setMaximumSize(QtCore.QSize(17, 17))
@@ -328,12 +327,15 @@ class Ui_MainWindow(object):
         self.label_13 = QtWidgets.QLabel(self.frame_texts)
         self.label_13.setMaximumSize(QtCore.QSize(600, 50))
         font = QtGui.QFont()
-        font.setFamily("Roboto Light")
-        font.setPointSize(14)
+        font.setFamily("Ubuntu")
+        font.setPointSize(16)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.label_13.setFont(font)
-        self.label_13.setStyleSheet("color: rgb(220, 220, 220);\n"
-"background-color: rgb(33, 33, 75);\n"
-"border-radius: 10px;")
+        self.label_13.setStyleSheet("color: rgb(211, 215, 207);\n"
+"font: 16pt \"Ubuntu\";\n"
+"")
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
         self.verticalLayout_10.addWidget(self.label_13)
@@ -426,6 +428,25 @@ class Ui_MainWindow(object):
         self.my_plan_button.setIconSize(QtCore.QSize(30, 30))
         self.my_plan_button.setObjectName("my_plan_button")
         self.horizontalLayout_6.addWidget(self.my_plan_button)
+        self.theme_button = QtWidgets.QPushButton(self.frame_label_credits)
+        self.theme_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.theme_button.setStyleSheet("QPushButton {\n"
+"    padding: 5px;\n"
+"    color: rgb(40, 40, 40);\n"
+"    background-color: rgba(6, 60, 89, 1);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {    \n"
+"    background-color: rgb(60, 231, 195);\n"
+"\n"
+"}")
+        self.theme_button.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/resource/resource/change-theme.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.theme_button.setIcon(icon2)
+        self.theme_button.setIconSize(QtCore.QSize(30, 30))
+        self.theme_button.setObjectName("theme_button")
+        self.horizontalLayout_6.addWidget(self.theme_button)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem)
         self.horizontalLayout_2.addWidget(self.frame_label_credits)
@@ -450,9 +471,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_title.setText(_translate("MainWindow", "SpeedX™  - Color version"))
-        self.btn_maximize.setToolTip(_translate("MainWindow", "Maximize"))
+        self.label_title.setText(_translate("MainWindow", "SpeedX™"))
         self.btn_minimize.setToolTip(_translate("MainWindow", "Minimize"))
+        self.btn_maximize.setToolTip(_translate("MainWindow", "Maximize"))
         self.btn_close.setToolTip(_translate("MainWindow", "Close"))
         self.label.setText(_translate("MainWindow", "CPU USAGE"))
         self.label_2.setText(_translate("MainWindow", "25%"))
