@@ -29,6 +29,7 @@ class MainWindow(QMainWindow):
         self.ui.theme_button.clicked.connect(self.change_theme)
         self.ui.textBrowser.setText(ABOUT_ME)
         self.count = 1  # theme set counter
+        self.setWindowFlags(Qt.FramelessWindowHint)
 
         def moveWindow(event):
             # RESTORE BEFORE MOVE
