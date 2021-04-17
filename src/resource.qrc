@@ -1,8 +1,16 @@
 <RCC>
   <qresource prefix="resource">
-    <file>resource/circle-cropped.png</file>
     <file>resource/speedx.png</file>
-    <file>resource/my_plan.png</file>
-    <file>resource/change-theme.png</file>
+    <file>resource/check-male--v1.png</file>
+    <file>resource/facebook-like.png</file>
+    <file>resource/horizontal-settings-mixer.png</file>
+    <file>resource/link.png</file>
+    <file>resource/paypal.png</file>
+    <file>resource/person-growth.png</file>
+    <file>resource/refresh--v1.png</file>
+    <file>resource/severity.png</file>
+    <file>resource/shopping-cart.png</file>
+    <file>resource/user-male--v1.png</file>
+    <file>resource/home.png</file>
   </qresource>
 </RCC>

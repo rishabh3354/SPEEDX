@@ -8,22 +8,25 @@ from utility import UtilsInfo
 class CpuThread(QtCore.QThread):
     change_value = pyqtSignal(list)
 
-    def __init__(self, parent=None):
+    def __init__(self, frequency, temp_unit, parent=None):
         super(CpuThread, self).__init__(parent)
+        self.frequency = frequency
+        self.temp_unit = temp_unit
 
     def run(self):
         while True:
             percentage_cpu = UtilsInfo.get_cpu_usage_percentage(self)
-            cpu_temp = UtilsInfo.get_cpu_temp(self)
+            cpu_temp = UtilsInfo.get_cpu_temp(self, self.temp_unit)
             self.change_value.emit([percentage_cpu, cpu_temp])
-            time.sleep(1)
+            time.sleep(self.frequency)
 
 
 class RamThread(QtCore.QThread):
     change_value = pyqtSignal(list)
 
-    def __init__(self, parent=None):
+    def __init__(self, frequency, parent=None):
         super(RamThread, self).__init__(parent)
+        self.frequency = frequency
 
     def run(self):
         while True:
@@ -31,7 +34,7 @@ class RamThread(QtCore.QThread):
             total_ram = UtilsInfo.get_total_ram(self)
             available_ram = UtilsInfo.get_available_ram(self)
             self.change_value.emit([ram_usage, total_ram, available_ram])
-            time.sleep(1)
+            time.sleep(self.frequency)
 
 
 class DummyDataThread(QtCore.QThread):
@@ -49,8 +52,10 @@ class DummyDataThread(QtCore.QThread):
 class NetSpeedThread(QtCore.QThread):
     change_value = pyqtSignal(list)
 
-    def __init__(self, parent=None):
+    def __init__(self, frequency, speed_unit, parent=None):
         super(NetSpeedThread, self).__init__(parent)
+        self.frequency = frequency
+        self.speed_unit = speed_unit
 
     def convert_to_gbit(self, value):
         return str(self.convert_bytes(value)).split("-")
@@ -62,12 +67,20 @@ class NetSpeedThread(QtCore.QThread):
         """
         this function will convert bytes to MB.... GB... etc
         """
-        step_unit = 1000.0  # 1024 bad the size
+        if self.speed_unit == "MB/s | KB/s | B/s":
+            step_unit = 1000.0  # 1024 bad the size
+            for x in ['B/S', 'KB/S', 'MB/S', 'GB/S', 'TB/S']:
+                if num < step_unit:
+                    return "%3.1f-%s" % (num, x)
+                num /= step_unit
 
-        for x in ['B/s', 'KB/s', 'MB/s', 'GB/s', 'TB/s']:
-            if num < step_unit:
-                return "%3.1f-%s" % (num, x)
-            num /= step_unit
+        elif self.speed_unit == "mb/s | kb/s | b/s":
+            num *= 8
+            step_unit = 1000.0  # 1024 bad the size
+            for x in ['Bps', 'Kbps', 'Mbps', 'Gbps', 'Tbps']:
+                if num < step_unit:
+                    return "%3.1f-%s" % (num, x)
+                num /= step_unit
 
     def run(self):
         old_value = 0
@@ -80,4 +93,4 @@ class NetSpeedThread(QtCore.QThread):
                 old_value = new_value
             else:
                 self.change_value.emit([["0", "B/s"], ping_data])
-            time.sleep(1)
+            time.sleep(self.frequency)

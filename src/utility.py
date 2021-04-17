@@ -2,7 +2,7 @@ import platform
 import random
 import cpuinfo
 import psutil
-import urllib.request
+from PyQt5.QtNetwork import QNetworkConfigurationManager
 
 
 class UtilsInfo:
@@ -21,14 +21,28 @@ class UtilsInfo:
             cpu_info = "CPU INFO"
         return cpu_info
 
-    def get_cpu_temp(self):
-        try:
-            cpu_temp = "Temp {0} ºC".format(dict(psutil.sensors_temperatures())["acpitz"][0].current)
-        except:
-            cpu_temp = "Temp N/A"
-        if cpu_temp == "Temp N/A":
-            cpu_temp = "Temp {0} ºC".format(get_cpu_temp())
-        return cpu_temp
+    def get_cpu_temp(self, temp_unit):
+        if temp_unit == "°C  (Celsius)":
+            try:
+                cpu_temp = "Temp {0} ºC".format(dict(psutil.sensors_temperatures())["acpitz"][0].current)
+            except:
+                cpu_temp = "Temp N/A"
+            if cpu_temp == "Temp N/A":
+                cpu_temp = "Temp {0} ºC".format(get_cpu_temp())
+            return cpu_temp
+
+        elif temp_unit == "°F  (Fahrenheit)":
+            try:
+                temp = dict(psutil.sensors_temperatures())["acpitz"][0].current
+                fahrenheit = (temp * 1.8) + 32
+                cpu_temp = "Temp {0} ºF".format("{:.1f}".format(fahrenheit))
+            except:
+                cpu_temp = "Temp N/A"
+            if cpu_temp == "Temp N/A":
+                temp = get_cpu_temp()
+                fahrenheit = (temp * 1.8) + 32
+                cpu_temp = "Temp {0} ºF".format("{:.1f}".format(fahrenheit))
+            return cpu_temp
 
     def get_cpu_usage_percentage(self):
         try:
@@ -52,11 +66,12 @@ class UtilsInfo:
 
     def check_internet_connection(self):
         try:
-            urllib.request.urlopen("http://google.com")
-            return "Connected"
-        except:
-            message = ["No Internet", "Please connect to Internet"]
-            return random.choice(message)
+            if QNetworkConfigurationManager().isOnline():
+                return "Connected"
+        except Exception as e:
+            pass
+        message = ["No Internet", "Please connect to Internet"]
+        return random.choice(message)
 
 
 def get_cpu_temp():
@@ -78,4 +93,4 @@ def get_cpu_temp():
     else:
         saved_temp = 55
 
-    return str(saved_temp)
+    return saved_temp

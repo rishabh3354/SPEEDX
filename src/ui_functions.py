@@ -20,14 +20,14 @@ class UIFunctions(MainWindow):
             GLOBAL_STATE = 1
 
             # IF MAXIMIZED REMOVE MARGINS AND BORDER RADIUS
-            self.ui.drop_shadow_layout.setContentsMargins(0, 0, 0, 0)
+            self.ui.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
             self.ui.btn_maximize.setToolTip("Restore")
         else:
             GLOBAL_STATE = 0
             self.showNormal()
             # self.resize(self.width()+1, self.height()+1)
-            # self.ui.drop_shadow_layout.setContentsMargins(100, 100, 100, 100)
-            self.ui.drop_shadow_layout.setContentsMargins(10, 10, 10, 10)
+            # self.ui.verticalLayout_3.setContentsMargins(100, 100, 100, 100)
+            self.ui.verticalLayout_3.setContentsMargins(10, 10, 10, 10)
             self.ui.btn_maximize.setToolTip("Maximize")
 
     # ==> UI DEFINITIONS
