@@ -6,8 +6,8 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QStyle
 from PyQt5.QtGui import QDesktopServices
 from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
-from src.account_threads import SaveLocalInToken, RefreshButtonThread
-from src.accounts import ApplicationStartupTask, days_left, get_user_data_from_local, check_for_local_token
+from account_threads import SaveLocalInToken, RefreshButtonThread
+from accounts import ApplicationStartupTask, days_left, get_user_data_from_local, check_for_local_token
 from style import theme_1, theme_2, frame_grip_1, frame_grip_2
 from ui_main import Ui_MainWindow
 from utility import UtilsInfo
