@@ -4,7 +4,7 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import Qt, QSettings, QUrl
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QStyle
-from qtpy.QtGui import QDesktopServices
+from PyQt5.QtGui import QDesktopServices
 from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
 from src.account_threads import SaveLocalInToken, RefreshButtonThread
 from src.accounts import ApplicationStartupTask, days_left, get_user_data_from_local, check_for_local_token
