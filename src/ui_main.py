@@ -15,14 +15,17 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(880, 600)
         MainWindow.setMinimumSize(QtCore.QSize(880, 600))
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_3.setContentsMargins(10, 10, 10, 10)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.drop_shadow_frame = QtWidgets.QFrame(self.centralwidget)
-        self.drop_shadow_frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 1), stop:0.521368 rgba(6, 60, 89, 1)); \n"
-"border-radius: 10px;")
+        self.drop_shadow_frame.setStyleSheet("background-color:  rgba(6, 60, 89, 1);\n"
+"border-radius: 10px;\n"
+"color:#d1d1d1;\n"
+"")
         self.drop_shadow_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.drop_shadow_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.drop_shadow_frame.setObjectName("drop_shadow_frame")
@@ -32,7 +35,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.title_bar = QtWidgets.QFrame(self.drop_shadow_frame)
         self.title_bar.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.title_bar.setStyleSheet("background-color: none;")
+        self.title_bar.setStyleSheet("border:none;")
         self.title_bar.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.title_bar.setFrameShadow(QtWidgets.QFrame.Raised)
         self.title_bar.setObjectName("title_bar")
@@ -46,6 +49,9 @@ class Ui_MainWindow(object):
         font.setFamily("Roboto Condensed Light")
         font.setPointSize(14)
         self.frame_title.setFont(font)
+        self.frame_title.setStyleSheet("border:none;\n"
+"border-radius: 10px;\n"
+"")
         self.frame_title.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_title.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_title.setObjectName("frame_title")
@@ -58,12 +64,17 @@ class Ui_MainWindow(object):
         font.setFamily("Roboto")
         font.setPointSize(14)
         self.label_title.setFont(font)
-        self.label_title.setStyleSheet("color: rgb(60, 231, 195);")
+        self.label_title.setStyleSheet("color: rgba(69, 182, 73, 1);\n"
+"text-align: center;\n"
+"border:none;")
         self.label_title.setObjectName("label_title")
         self.verticalLayout_2.addWidget(self.label_title)
         self.horizontalLayout.addWidget(self.frame_title)
         self.frame_btns = QtWidgets.QFrame(self.title_bar)
         self.frame_btns.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.frame_btns.setStyleSheet("border:none;\n"
+"border-radius: 10px;\n"
+"")
         self.frame_btns.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_btns.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_btns.setObjectName("frame_btns")
@@ -114,7 +125,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.frame_btns)
         self.verticalLayout.addWidget(self.title_bar)
         self.content_bar = QtWidgets.QFrame(self.drop_shadow_frame)
-        self.content_bar.setStyleSheet("background-color: none;")
+        self.content_bar.setStyleSheet("")
         self.content_bar.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.content_bar.setFrameShadow(QtWidgets.QFrame.Raised)
         self.content_bar.setObjectName("content_bar")
@@ -357,6 +368,12 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_21.sizePolicy().hasHeightForWidth())
         self.label_21.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_21.setFont(font)
         self.label_21.setObjectName("label_21")
         self.horizontalLayout_37.addWidget(self.label_21)
         self.verticalLayout_11.addLayout(self.horizontalLayout_37)
@@ -616,22 +633,25 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
         self.label_20.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_20.setFont(font)
         self.label_20.setObjectName("label_20")
         self.horizontalLayout_36.addWidget(self.label_20)
         self.verticalLayout_11.addLayout(self.horizontalLayout_36)
         self.horizontalLayout_35 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_35.setObjectName("horizontalLayout_35")
-        self.theme1_2 = QtWidgets.QPushButton(self.page_credits)
+        self.theme1 = QtWidgets.QPushButton(self.page_credits)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.theme1_2.sizePolicy().hasHeightForWidth())
-        self.theme1_2.setSizePolicy(sizePolicy)
-        self.theme1_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.theme1_2.setStyleSheet("QPushButton {\n"
+        sizePolicy.setHeightForWidth(self.theme1.sizePolicy().hasHeightForWidth())
+        self.theme1.setSizePolicy(sizePolicy)
+        self.theme1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.theme1.setStyleSheet("QPushButton {\n"
 "    color:white;\n"
 "    border-color: #76797C;\n"
-"    padding: 40px;\n"
+"    padding: 10px;\n"
 "    border-radius: 5px;\n"
 "    border-style: solid;\n"
 "    border-width: 1px;\n"
@@ -641,38 +661,35 @@ class Ui_MainWindow(object):
 "")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/myresource/resource/single_video.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.theme1_2.setIcon(icon)
-        self.theme1_2.setIconSize(QtCore.QSize(80, 80))
-        self.theme1_2.setObjectName("theme1_2")
-        self.horizontalLayout_35.addWidget(self.theme1_2)
-        self.theme2_2 = QtWidgets.QPushButton(self.page_credits)
+        self.theme1.setIcon(icon)
+        self.theme1.setIconSize(QtCore.QSize(80, 80))
+        self.theme1.setObjectName("theme1")
+        self.horizontalLayout_35.addWidget(self.theme1)
+        self.theme2 = QtWidgets.QPushButton(self.page_credits)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.theme2_2.sizePolicy().hasHeightForWidth())
-        self.theme2_2.setSizePolicy(sizePolicy)
-        self.theme2_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.theme2_2.setStyleSheet("QPushButton {\n"
+        sizePolicy.setHeightForWidth(self.theme2.sizePolicy().hasHeightForWidth())
+        self.theme2.setSizePolicy(sizePolicy)
+        self.theme2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.theme2.setStyleSheet("QPushButton {\n"
 "    color:white;\n"
 "    border-color: #76797C;\n"
-"    padding: 40px;\n"
+"    padding: 10px;\n"
 "    border-radius: 5px;\n"
 "    border-style: solid;\n"
 "    border-width: 1px;\n"
-"background-color:  QLinearGradient( x1: 0, y1: 0,\n"
-"                             x2: 1, y2: 0, \n"
-"                            stop: 0 rgb(37, 37, 37),\n"
-"                            stop: 1 rgb(0, 77, 128) );\n"
+"    background-color:  rgb(45, 45, 45);\n"
 "}\n"
 "\n"
 "\n"
 "")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/myresource/resource/playlist.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.theme2_2.setIcon(icon1)
-        self.theme2_2.setIconSize(QtCore.QSize(80, 80))
-        self.theme2_2.setObjectName("theme2_2")
-        self.horizontalLayout_35.addWidget(self.theme2_2)
+        self.theme2.setIcon(icon1)
+        self.theme2.setIconSize(QtCore.QSize(80, 80))
+        self.theme2.setObjectName("theme2")
+        self.horizontalLayout_35.addWidget(self.theme2)
         self.verticalLayout_11.addLayout(self.horizontalLayout_35)
         self.stackedWidget.addWidget(self.page_credits)
         self.account_page = QtWidgets.QWidget()
@@ -1057,13 +1074,12 @@ class Ui_MainWindow(object):
         self.home_button.setSizePolicy(sizePolicy)
         self.home_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.home_button.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
+"    padding: 15px;\n"
 "    color: rgb(40, 40, 40);\n"
-"    background-color: rgba(6, 60, 89, 1);\n"
 "    border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover {    \n"
-"    background-color: rgb(60, 231, 195);\n"
+"    background-color: rgb(0, 153, 255);\n"
 "\n"
 "}")
         self.home_button.setText("")
@@ -1081,7 +1097,8 @@ class Ui_MainWindow(object):
         self.frame_grip.setMaximumSize(QtCore.QSize(30, 30))
         self.frame_grip.setAutoFillBackground(False)
         self.frame_grip.setStyleSheet("padding: 5px;\n"
-"background-color: rgb(33, 33, 75);")
+"background-color: rgba(18, 51, 70, 1)\n"
+"")
         self.frame_grip.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_grip.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_grip.setObjectName("frame_grip")
@@ -1128,8 +1145,8 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(0, _translate("MainWindow", "°C  (Celsius)"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "°F  (Fahrenheit)"))
         self.label_20.setText(_translate("MainWindow", "Theme Settings"))
-        self.theme1_2.setText(_translate("MainWindow", "Theme1 (Zesty-Blue)"))
-        self.theme2_2.setText(_translate("MainWindow", "Theme2 (Gray-blue)"))
+        self.theme1.setText(_translate("MainWindow", "Theme1 (Zesty-Blue)"))
+        self.theme2.setText(_translate("MainWindow", "Theme2 (Grey)"))
         self.lineEdit_plan.setText(_translate("MainWindow", "Evaluation"))
         self.lineEdit_expires_on.setText(_translate("MainWindow", "Licence Expired! Purchase a new Licence"))
         self.lineEdit_account_id.setText(_translate("MainWindow", "8fjfdjhqoifj383ld"))

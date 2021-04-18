@@ -8,7 +8,7 @@ from qtpy.QtGui import QDesktopServices
 from speedx_threads import DummyDataThread, CpuThread, RamThread, NetSpeedThread
 from src.account_threads import SaveLocalInToken, RefreshButtonThread
 from src.accounts import ApplicationStartupTask, days_left, get_user_data_from_local, check_for_local_token
-from style import theme_dict, button_dict
+from style import theme_1, theme_2, frame_grip_1, frame_grip_2
 from ui_main import Ui_MainWindow
 from utility import UtilsInfo
 
@@ -27,6 +27,7 @@ class MainWindow(QMainWindow):
         self.net_frequency = 1
         self.cpu_frequency = 1
         self.ram_frequency = 1
+        self.theme_selected = 1
         self.is_plan_active = True
         self.speed_unit = "MB/s | KB/s | B/s"
         self.temp_unit = "°C  (Celsius)"
@@ -45,6 +46,9 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_3.valueChanged.connect(self.change_frequency_ram)
         self.ui.comboBox_2.currentIndexChanged.connect(self.change_net_speed_unit)
         self.ui.comboBox_3.currentIndexChanged.connect(self.change_temp_unit)
+        # theme setup
+        self.ui.theme1.clicked.connect(self.theme1_clicked)
+        self.ui.theme2.clicked.connect(self.theme2_clicked)
 
         self.count = 1  # theme set counter
         self.setWindowFlags(Qt.FramelessWindowHint)
@@ -116,6 +120,12 @@ class MainWindow(QMainWindow):
             self.ram_frequency = FREQUENCY_MAPPER.get(int(self.settings.value("ram_frequency")), 4)
             self.ui.horizontalSlider_3.setValue(int(self.settings.value("ram_frequency")))
             self.ui.label_16.setText(str(FREQUENCY_MAPPER.get(int(self.settings.value("ram_frequency")), "1")) + " Sec")
+        if self.settings.contains("selected_theme"):
+            self.theme_selected = int(self.settings.value("selected_theme"))
+            if self.theme_selected == 1:
+                self.theme1_clicked()
+            else:
+                self.theme2_clicked()
 
     def save_settings(self):
         self.settings.setValue("net_speed_unit", self.ui.comboBox_2.currentText())
@@ -123,6 +133,7 @@ class MainWindow(QMainWindow):
         self.settings.setValue("net_frequency", self.ui.horizontalSlider.value())
         self.settings.setValue("cpu_frequency", self.ui.horizontalSlider_2.value())
         self.settings.setValue("ram_frequency", self.ui.horizontalSlider_3.value())
+        self.settings.setValue("selected_theme", self.theme_selected)
 
     def default_frequency(self):
         self.ui.horizontalSlider.setValue(4)
@@ -175,16 +186,6 @@ class MainWindow(QMainWindow):
             self.start_ram_thread()
         except Exception as e:
             pass
-
-    def change_theme(self):
-        if self.count == 5:
-            self.count = 1
-        self.ui.drop_shadow_frame.setStyleSheet(theme_dict.get(self.count))
-        self.ui.pushButton.setStyleSheet(button_dict.get(self.count))
-        self.ui.theme_button.setStyleSheet(button_dict.get(self.count))
-        self.ui.my_plan_button.setStyleSheet(button_dict.get(self.count))
-        self.ui.textBrowser.setStyleSheet(theme_dict.get(self.count))
-        self.count += 1
 
     def closeEvent(self, event):
         self.save_settings()
@@ -381,6 +382,20 @@ class MainWindow(QMainWindow):
                 pass
             return False
         return True
+
+    def theme1_clicked(self):
+        self.theme_selected = 1
+        self.ui.drop_shadow_frame.setStyleSheet(theme_1)
+        self.ui.page_credits.setStyleSheet(theme_1)
+        self.ui.account_page.setStyleSheet(theme_1)
+        self.ui.frame_grip.setStyleSheet(frame_grip_1)
+
+    def theme2_clicked(self):
+        self.theme_selected = 2
+        self.ui.drop_shadow_frame.setStyleSheet(theme_2)
+        self.ui.page_credits.setStyleSheet(theme_2)
+        self.ui.account_page.setStyleSheet(theme_2)
+        self.ui.frame_grip.setStyleSheet(frame_grip_2)
 
 
 if __name__ == "__main__":
