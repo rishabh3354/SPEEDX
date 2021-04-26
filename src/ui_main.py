@@ -1073,20 +1073,12 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.home_button.sizePolicy().hasHeightForWidth())
         self.home_button.setSizePolicy(sizePolicy)
         self.home_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.home_button.setStyleSheet("QPushButton {\n"
-"    padding: 15px;\n"
-"    color: rgb(40, 40, 40);\n"
-"    border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover {    \n"
-"    background-color: rgb(0, 153, 255);\n"
-"\n"
-"}")
+        self.home_button.setStyleSheet("")
         self.home_button.setText("")
         icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/resource/resource/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon11.addPixmap(QtGui.QPixmap(":/resource/resource/circled-menu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.home_button.setIcon(icon11)
-        self.home_button.setIconSize(QtCore.QSize(30, 30))
+        self.home_button.setIconSize(QtCore.QSize(40, 32))
         self.home_button.setObjectName("home_button")
         self.horizontalLayout_6.addWidget(self.home_button)
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -1108,7 +1100,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

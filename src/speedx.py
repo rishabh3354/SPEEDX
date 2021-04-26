@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         self.net_frequency = 1
         self.cpu_frequency = 1
         self.ram_frequency = 1
-        self.theme_selected = 1
+        self.theme_selected = 2
         self.is_plan_active = True
         self.speed_unit = "MB/s | KB/s | B/s"
         self.temp_unit = "°C  (Celsius)"

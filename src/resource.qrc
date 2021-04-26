@@ -12,5 +12,6 @@
     <file>resource/shopping-cart.png</file>
     <file>resource/user-male--v1.png</file>
     <file>resource/home.png</file>
+    <file>resource/circled-menu.png</file>
   </qresource>
 </RCC>
