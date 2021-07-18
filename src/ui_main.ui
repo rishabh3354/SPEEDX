@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>880</width>
-    <height>600</height>
+    <width>850</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>880</width>
-    <height>600</height>
+    <width>850</width>
+    <height>500</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -182,6 +182,19 @@ border-radius: 10px;
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
               <widget class="QPushButton" name="btn_minimize">
                <property name="minimumSize">
                 <size>
@@ -206,38 +219,6 @@ border-radius: 10px;
 }
 QPushButton:hover {	
 	background-color: rgba(255, 170, 0, 150);
-}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_maximize">
-               <property name="minimumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>17</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Maximize</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	border: none;
-	border-radius: 8px;	
-	background-color: rgb(85, 255, 127);
-}
-QPushButton:hover {	
-	background-color: rgba(85, 255, 127, 150);
 }</string>
                </property>
                <property name="text">
@@ -301,7 +282,7 @@ QPushButton:hover {
              <string notr="true">background-color: none;</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_home">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -736,7 +717,7 @@ color: rgb(60, 231, 195);</string>
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>100</height>
+                     <height>45</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -751,7 +732,7 @@ color: rgb(60, 231, 195);</string>
                       <property name="maximumSize">
                        <size>
                         <width>600</width>
-                        <height>50</height>
+                        <height>40</height>
                        </size>
                       </property>
                       <property name="font">
@@ -776,6 +757,39 @@ font: 16pt &quot;Ubuntu&quot;;
                       </property>
                      </widget>
                     </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_label_credits">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>15</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
                    </layout>
                   </widget>
                  </item>
@@ -1479,6 +1493,19 @@ color: white;
                    </widget>
                   </item>
                   <item>
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
                    <widget class="QLabel" name="error_message">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -1534,7 +1561,7 @@ background-color: rgb(48,48,48);
 </string>
                     </property>
                     <property name="text">
-                     <string>Purchase Licence (75% OFF)</string>
+                     <string>Purchase Now</string>
                     </property>
                     <property name="icon">
                      <iconset resource="resource.qrc">
@@ -1915,7 +1942,7 @@ background-color:  rgb(0, 77, 128);
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>30</height>
+           <height>33</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -1944,106 +1971,133 @@ background-color:  rgb(0, 77, 128);
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frame_label_credits">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+           <widget class="QPushButton" name="home_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>15</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="home_button">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resource.qrc">
-                 <normaloff>:/resource/resource/circled-menu.png</normaloff>:/resource/resource/circled-menu.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>40</width>
-                 <height>32</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/resource/resource/circled-menu.png</normaloff>:/resource/resource/circled-menu.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>30</height>
+             </size>
+            </property>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_grip">
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
+           <widget class="QPushButton" name="speed">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="toolTip">
-             <string>Resize Windows</string>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">padding: 5px;
-background-color: rgba(18, 51, 70, 1)
-</string>
+             <string notr="true"/>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+            <property name="text">
+             <string/>
             </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/resource/resource/severity.png</normaloff>:/resource/resource/severity.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>33</height>
+             </size>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="setting">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/resource/resource/horizontal-settings-mixer.png</normaloff>:/resource/resource/horizontal-settings-mixer.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="account">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/resource/resource/check-male--v1.png</normaloff>:/resource/resource/check-male--v1.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>33</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>

@@ -48,7 +48,7 @@ class UIFunctions(MainWindow):
         self.ui.drop_shadow_frame.setGraphicsEffect(self.shadow)
 
         # MAXIMIZE / RESTORE
-        self.ui.btn_maximize.clicked.connect(lambda: UIFunctions.maximize_restore(self))
+        # self.ui.btn_maximize.clicked.connect(lambda: UIFunctions.maximize_restore(self))
 
         # MINIMIZE
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
@@ -57,7 +57,7 @@ class UIFunctions(MainWindow):
         self.ui.btn_close.clicked.connect(lambda: self.close())
 
         # ==> CREATE SIZE GRIP TO RESIZE WINDOW
-        self.sizegrip = QSizeGrip(self.ui.frame_grip)
+        # self.sizegrip = QSizeGrip(self.ui.frame_grip)
 
     # RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTAURED
     def returnStatus():

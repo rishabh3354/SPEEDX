@@ -40,6 +40,10 @@ class MainWindow(QMainWindow):
         self.ui.monitor_button.clicked.connect(self.monitor_button_clicked)
         self.ui.setting_button.clicked.connect(self.setting_button_clicked)
         self.ui.account_button.clicked.connect(self.account_button_clicked)
+        self.ui.speed.clicked.connect(self.monitor_button_clicked)
+        self.ui.setting.clicked.connect(self.setting_button_clicked)
+        self.ui.account.clicked.connect(self.account_button_clicked)
+
         # App setting buttons
         self.ui.horizontalSlider.valueChanged.connect(self.change_frequency_net)
         self.ui.horizontalSlider_2.valueChanged.connect(self.change_frequency_cpu)
@@ -97,8 +101,8 @@ class MainWindow(QMainWindow):
             self.show()
             self.load_annimation_data()
             self.check_your_plan()
-            self.ui.label_7.setText("Please Purchase To Unlock")
-            self.ui.label_8.setText("Licence Expired !")
+            self.ui.label_7.setText("Evaluation Period")
+            self.ui.label_8.setText("Ended!")
             self.ui.label_6.setText("0.0")
 
     def load_settings(self):
@@ -349,7 +353,7 @@ class MainWindow(QMainWindow):
             else:
                 plan_days_left = days_left(expiry_date)
                 if plan_days_left == "0 Day(s) Left":
-                    self.ui.error_message.setText("Licence Expired! Purchase a new Licence")
+                    self.ui.error_message.setText("Evaluation period Ended!")
                     self.ui.lineEdit_expires_on.setText(plan_days_left)
                     self.is_plan_active = False
                 else:
@@ -365,7 +369,7 @@ class MainWindow(QMainWindow):
             self.msg.setStyleSheet("background-color:rgb(48,48,48);color:white;")
             self.msg.setIcon(QMessageBox.Information)
             self.msg.setText("Evaluation Period Ended!")
-            self.msg.setInformativeText("Please purchase a Licence to Unlock this Feature (75% OFF for limited period)")
+            self.msg.setInformativeText("Please purchase a Licence to Unlock Internet Speed Pro Feature.")
             close = self.msg.addButton(QMessageBox.Yes)
             purchase = self.msg.addButton(QMessageBox.Yes)
             purchase.setText('Purchase Licence')
@@ -388,14 +392,14 @@ class MainWindow(QMainWindow):
         self.ui.drop_shadow_frame.setStyleSheet(theme_1)
         self.ui.page_credits.setStyleSheet(theme_1)
         self.ui.account_page.setStyleSheet(theme_1)
-        self.ui.frame_grip.setStyleSheet(frame_grip_1)
+        # self.ui.frame_grip.setStyleSheet(frame_grip_1)
 
     def theme2_clicked(self):
         self.theme_selected = 2
         self.ui.drop_shadow_frame.setStyleSheet(theme_2)
         self.ui.page_credits.setStyleSheet(theme_2)
         self.ui.account_page.setStyleSheet(theme_2)
-        self.ui.frame_grip.setStyleSheet(frame_grip_2)
+        # self.ui.frame_grip.setStyleSheet(frame_grip_2)
 
 
 if __name__ == "__main__":
