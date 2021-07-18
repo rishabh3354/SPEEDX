@@ -77,6 +77,7 @@ class MainWindow(QMainWindow):
         self.ui.error_message.clear()
         self.ui.error_message.setStyleSheet("color:red;")
         self.ui.account_progress_bar.setVisible(False)
+        self.ui.account_progress_bar.setFixedHeight(3)
         self.my_plan()
 
         # signal and slots
