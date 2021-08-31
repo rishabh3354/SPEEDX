@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(850, 500)
-        MainWindow.setMinimumSize(QtCore.QSize(850, 500))
+        MainWindow.resize(668, 395)
+        MainWindow.setMinimumSize(QtCore.QSize(200, 200))
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -60,16 +60,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(15, 0, 0, 0)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.label_title = QtWidgets.QLabel(self.frame_title)
+        self.label_13 = QtWidgets.QLabel(self.frame_title)
+        self.label_13.setMaximumSize(QtCore.QSize(451, 21))
         font = QtGui.QFont()
-        font.setFamily("Roboto")
-        font.setPointSize(14)
-        self.label_title.setFont(font)
-        self.label_title.setStyleSheet("color: rgba(69, 182, 73, 1);\n"
-"text-align: center;\n"
-"border:none;")
-        self.label_title.setObjectName("label_title")
-        self.verticalLayout_2.addWidget(self.label_title)
+        font.setFamily("URW Gothic")
+        font.setPointSize(12)
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet("color: rgba(69, 182, 73, 1);\n"
+"background-color: none;\n"
+"border-radius: 20px;")
+        self.label_13.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_13.setWordWrap(True)
+        self.label_13.setObjectName("label_13")
+        self.verticalLayout_2.addWidget(self.label_13)
         self.horizontalLayout.addWidget(self.frame_title)
         self.frame_btns = QtWidgets.QFrame(self.title_bar)
         self.frame_btns.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -139,67 +142,8 @@ class Ui_MainWindow(object):
         self.frame_infos.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_infos.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_infos.setObjectName("frame_infos")
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_infos)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.frame_circle_1 = QtWidgets.QFrame(self.frame_infos)
-        self.frame_circle_1.setMinimumSize(QtCore.QSize(250, 250))
-        self.frame_circle_1.setMaximumSize(QtCore.QSize(250, 250))
-        self.frame_circle_1.setStyleSheet("QFrame{\n"
-"    border: 5px solid rgb(60, 231, 195);\n"
-"    border-radius: 125px;\n"
-"}\n"
-"QFrame:hover {\n"
-"    border: 5px solid rgb(105, 95, 148);\n"
-"}")
-        self.frame_circle_1.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_circle_1.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_circle_1.setObjectName("frame_circle_1")
-        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.frame_circle_1)
-        self.verticalLayout_6.setContentsMargins(10, 50, 10, 50)
-        self.verticalLayout_6.setSpacing(10)
-        self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.label = QtWidgets.QLabel(self.frame_circle_1)
-        font = QtGui.QFont()
-        font.setFamily("Roboto")
-        font.setPointSize(11)
-        self.label.setFont(font)
-        self.label.setStyleSheet("border: none;\n"
-"color: rgb(60, 231, 195);")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout_6.addWidget(self.label)
-        self.label_2 = QtWidgets.QLabel(self.frame_circle_1)
-        font = QtGui.QFont()
-        font.setFamily("Sans Serif")
-        font.setPointSize(48)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("border: none;\n"
-"color: rgb(220,220,220);")
-        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout_6.addWidget(self.label_2)
-        self.label_3 = QtWidgets.QLabel(self.frame_circle_1)
-        font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
-        font.setPointSize(11)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("border: none;\n"
-" color: rgb(128, 102, 168);")
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.verticalLayout_6.addWidget(self.label_3)
-        self.label_4 = QtWidgets.QLabel(self.frame_circle_1)
-        font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
-        font.setPointSize(11)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("border: none;\n"
-"color: rgb(60, 231, 195);")
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout_6.addWidget(self.label_4)
-        self.horizontalLayout_4.addWidget(self.frame_circle_1)
         self.frame_circle_2 = QtWidgets.QFrame(self.frame_infos)
+        self.frame_circle_2.setGeometry(QtCore.QRect(180, 0, 250, 250))
         self.frame_circle_2.setMinimumSize(QtCore.QSize(250, 250))
         self.frame_circle_2.setMaximumSize(QtCore.QSize(250, 250))
         self.frame_circle_2.setStyleSheet("QFrame{\n"
@@ -218,7 +162,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.label_5 = QtWidgets.QLabel(self.frame_circle_2)
         font = QtGui.QFont()
-        font.setFamily("Roboto")
+        font.setFamily("URW Gothic")
         font.setPointSize(11)
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("border: none;\n"
@@ -229,7 +173,7 @@ class Ui_MainWindow(object):
         self.label_6 = QtWidgets.QLabel(self.frame_circle_2)
         font = QtGui.QFont()
         font.setFamily("Sans Serif")
-        font.setPointSize(48)
+        font.setPointSize(44)
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("border: none;\n"
 "color: rgb(220,220,220);")
@@ -238,7 +182,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addWidget(self.label_6)
         self.label_7 = QtWidgets.QLabel(self.frame_circle_2)
         font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
+        font.setFamily("URW Gothic")
         font.setPointSize(11)
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("border: none;\n"
@@ -248,7 +192,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addWidget(self.label_7)
         self.label_8 = QtWidgets.QLabel(self.frame_circle_2)
         font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
+        font.setFamily("URW Gothic")
         font.setPointSize(11)
         self.label_8.setFont(font)
         self.label_8.setStyleSheet("border: none;\n"
@@ -256,13 +200,13 @@ class Ui_MainWindow(object):
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName("label_8")
         self.verticalLayout_7.addWidget(self.label_8)
-        self.horizontalLayout_4.addWidget(self.frame_circle_2)
         self.frame_circle_3 = QtWidgets.QFrame(self.frame_infos)
-        self.frame_circle_3.setMinimumSize(QtCore.QSize(250, 250))
-        self.frame_circle_3.setMaximumSize(QtCore.QSize(250, 250))
+        self.frame_circle_3.setGeometry(QtCore.QRect(440, 40, 170, 170))
+        self.frame_circle_3.setMinimumSize(QtCore.QSize(170, 170))
+        self.frame_circle_3.setMaximumSize(QtCore.QSize(170, 170))
         self.frame_circle_3.setStyleSheet("QFrame{\n"
 "    border: 5px solid rgb(60, 231, 195);\n"
-"    border-radius: 125px;\n"
+"    border-radius: 85px;\n"
 "}\n"
 "QFrame:hover {\n"
 "    border: 5px solid rgb(105, 95, 148);\n"
@@ -270,76 +214,101 @@ class Ui_MainWindow(object):
         self.frame_circle_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_circle_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_circle_3.setObjectName("frame_circle_3")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_circle_3)
-        self.verticalLayout_8.setContentsMargins(10, 50, 10, 50)
-        self.verticalLayout_8.setSpacing(10)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.label_9 = QtWidgets.QLabel(self.frame_circle_3)
+        self.label_9.setGeometry(QtCore.QRect(40, 30, 91, 20))
         font = QtGui.QFont()
-        font.setFamily("Roboto")
-        font.setPointSize(11)
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("border: none;\n"
 "color: rgb(60, 231, 195);")
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
-        self.verticalLayout_8.addWidget(self.label_9)
         self.label_10 = QtWidgets.QLabel(self.frame_circle_3)
+        self.label_10.setGeometry(QtCore.QRect(20, 60, 140, 41))
         font = QtGui.QFont()
         font.setFamily("Sans Serif")
-        font.setPointSize(48)
+        font.setPointSize(25)
         self.label_10.setFont(font)
         self.label_10.setStyleSheet("border: none;\n"
 "color: rgb(220,220,220);")
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
-        self.verticalLayout_8.addWidget(self.label_10)
         self.label_11 = QtWidgets.QLabel(self.frame_circle_3)
+        self.label_11.setGeometry(QtCore.QRect(40, 100, 91, 20))
         font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
-        font.setPointSize(11)
+        font.setFamily("URW Gothic")
+        font.setPointSize(8)
         self.label_11.setFont(font)
         self.label_11.setStyleSheet("border: none;\n"
 " color: rgb(128, 102, 168);")
         self.label_11.setAlignment(QtCore.Qt.AlignCenter)
         self.label_11.setObjectName("label_11")
-        self.verticalLayout_8.addWidget(self.label_11)
         self.label_12 = QtWidgets.QLabel(self.frame_circle_3)
+        self.label_12.setGeometry(QtCore.QRect(50, 120, 71, 20))
         font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
-        font.setPointSize(11)
+        font.setFamily("URW Gothic")
+        font.setPointSize(8)
         self.label_12.setFont(font)
         self.label_12.setStyleSheet("border: none;\n"
 "color: rgb(60, 231, 195);")
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
-        self.verticalLayout_8.addWidget(self.label_12)
-        self.horizontalLayout_4.addWidget(self.frame_circle_3)
-        self.verticalLayout_9.addWidget(self.frame_infos)
-        self.frame_texts = QtWidgets.QFrame(self.frame_content_home)
-        self.frame_texts.setMinimumSize(QtCore.QSize(600, 0))
-        self.frame_texts.setMaximumSize(QtCore.QSize(16777215, 45))
-        self.frame_texts.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_texts.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_texts.setObjectName("frame_texts")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_texts)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.label_13 = QtWidgets.QLabel(self.frame_texts)
-        self.label_13.setMaximumSize(QtCore.QSize(600, 40))
+        self.frame_circle_1 = QtWidgets.QFrame(self.frame_infos)
+        self.frame_circle_1.setGeometry(QtCore.QRect(0, 40, 170, 170))
+        self.frame_circle_1.setMinimumSize(QtCore.QSize(170, 170))
+        self.frame_circle_1.setMaximumSize(QtCore.QSize(170, 170))
+        self.frame_circle_1.setStyleSheet("QFrame{\n"
+"    border: 5px solid rgb(60, 231, 195);\n"
+"    border-radius: 85px;\n"
+"}\n"
+"QFrame:hover {\n"
+"    border: 5px solid rgb(105, 95, 148);\n"
+"}")
+        self.frame_circle_1.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_circle_1.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_circle_1.setObjectName("frame_circle_1")
+        self.label = QtWidgets.QLabel(self.frame_circle_1)
+        self.label.setGeometry(QtCore.QRect(40, 30, 81, 20))
         font = QtGui.QFont()
-        font.setFamily("Ubuntu")
-        font.setPointSize(16)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.label_13.setFont(font)
-        self.label_13.setStyleSheet("color: rgb(211, 215, 207);\n"
-"font: 16pt \"Ubuntu\";\n"
-"")
-        self.label_13.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_13.setObjectName("label_13")
-        self.verticalLayout_10.addWidget(self.label_13)
-        self.verticalLayout_9.addWidget(self.frame_texts, 0, QtCore.Qt.AlignHCenter)
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label.setFont(font)
+        self.label.setStyleSheet("border: none;\n"
+"color: rgb(60, 231, 195);")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.frame_circle_1)
+        self.label_2.setGeometry(QtCore.QRect(30, 60, 111, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sans Serif")
+        font.setPointSize(25)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("border: none;\n"
+"color: rgb(220,220,220);")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.frame_circle_1)
+        self.label_3.setGeometry(QtCore.QRect(50, 100, 71, 20))
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(8)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("border: none;\n"
+" color: rgb(128, 102, 168);")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.frame_circle_1)
+        self.label_4.setGeometry(QtCore.QRect(40, 120, 91, 16))
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(8)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("border: none;\n"
+"color: rgb(60, 231, 195);")
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout_9.addWidget(self.frame_infos)
         self.frame_label_credits = QtWidgets.QFrame(self.frame_content_home)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -372,6 +341,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_21.sizePolicy().hasHeightForWidth())
         self.label_21.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("URW Gothic")
         font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
@@ -388,6 +358,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_19.sizePolicy().hasHeightForWidth())
         self.label_19.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_19.setFont(font)
         self.label_19.setObjectName("label_19")
         self.gridLayout_11.addWidget(self.label_19, 0, 1, 1, 1)
         self.horizontalSlider_2 = QtWidgets.QSlider(self.page_credits)
@@ -408,6 +382,10 @@ class Ui_MainWindow(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_11.addItem(spacerItem1, 0, 0, 1, 1)
         self.label_14 = QtWidgets.QLabel(self.page_credits)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_14.setFont(font)
         self.label_14.setAlignment(QtCore.Qt.AlignCenter)
         self.label_14.setObjectName("label_14")
         self.gridLayout_11.addWidget(self.label_14, 3, 4, 1, 1)
@@ -417,6 +395,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_22.sizePolicy().hasHeightForWidth())
         self.label_22.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_22.setFont(font)
         self.label_22.setObjectName("label_22")
         self.gridLayout_11.addWidget(self.label_22, 2, 1, 1, 1)
         self.comboBox_2 = QtWidgets.QComboBox(self.page_credits)
@@ -425,6 +407,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.comboBox_2.sizePolicy().hasHeightForWidth())
         self.comboBox_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.comboBox_2.setFont(font)
         self.comboBox_2.setStyleSheet("QComboBox {\n"
 "    selection-background-color:  rgba(54,136,198,178);\n"
 "    border-style: solid;\n"
@@ -495,6 +481,9 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_23.sizePolicy().hasHeightForWidth())
         self.label_23.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        self.label_23.setFont(font)
         self.label_23.setObjectName("label_23")
         self.gridLayout_11.addWidget(self.label_23, 3, 1, 1, 1)
         self.label_24 = QtWidgets.QLabel(self.page_credits)
@@ -503,6 +492,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_24.sizePolicy().hasHeightForWidth())
         self.label_24.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_24.setFont(font)
         self.label_24.setObjectName("label_24")
         self.gridLayout_11.addWidget(self.label_24, 4, 1, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -510,10 +503,18 @@ class Ui_MainWindow(object):
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_11.addItem(spacerItem3, 0, 4, 1, 1)
         self.label_15 = QtWidgets.QLabel(self.page_credits)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_15.setFont(font)
         self.label_15.setAlignment(QtCore.Qt.AlignCenter)
         self.label_15.setObjectName("label_15")
         self.gridLayout_11.addWidget(self.label_15, 2, 4, 1, 1)
         self.label_16 = QtWidgets.QLabel(self.page_credits)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_16.setFont(font)
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.gridLayout_11.addWidget(self.label_16, 4, 4, 1, 1)
@@ -553,6 +554,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_25.sizePolicy().hasHeightForWidth())
         self.label_25.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.label_25.setFont(font)
         self.label_25.setObjectName("label_25")
         self.gridLayout_11.addWidget(self.label_25, 1, 1, 1, 1)
         self.comboBox_3 = QtWidgets.QComboBox(self.page_credits)
@@ -561,6 +566,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.comboBox_3.sizePolicy().hasHeightForWidth())
         self.comboBox_3.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.comboBox_3.setFont(font)
         self.comboBox_3.setStyleSheet("QComboBox {\n"
 "    selection-background-color:  rgba(54,136,198,178);\n"
 "    border-style: solid;\n"
@@ -637,6 +646,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
         self.label_20.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("URW Gothic")
         font.setPointSize(12)
         self.label_20.setFont(font)
         self.label_20.setObjectName("label_20")
@@ -650,11 +660,15 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.theme1.sizePolicy().hasHeightForWidth())
         self.theme1.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(8)
+        self.theme1.setFont(font)
         self.theme1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.theme1.setStyleSheet("QPushButton {\n"
 "    color:white;\n"
 "    border-color: #76797C;\n"
-"    padding: 10px;\n"
+"    padding: 1px;\n"
 "    border-radius: 5px;\n"
 "    border-style: solid;\n"
 "    border-width: 1px;\n"
@@ -665,7 +679,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/myresource/resource/single_video.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.theme1.setIcon(icon)
-        self.theme1.setIconSize(QtCore.QSize(80, 80))
+        self.theme1.setIconSize(QtCore.QSize(30, 30))
         self.theme1.setObjectName("theme1")
         self.horizontalLayout_35.addWidget(self.theme1)
         self.theme2 = QtWidgets.QPushButton(self.page_credits)
@@ -674,11 +688,15 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.theme2.sizePolicy().hasHeightForWidth())
         self.theme2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(8)
+        self.theme2.setFont(font)
         self.theme2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.theme2.setStyleSheet("QPushButton {\n"
 "    color:white;\n"
 "    border-color: #76797C;\n"
-"    padding: 10px;\n"
+"    padding: 1px;\n"
 "    border-radius: 5px;\n"
 "    border-style: solid;\n"
 "    border-width: 1px;\n"
@@ -690,7 +708,7 @@ class Ui_MainWindow(object):
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/myresource/resource/playlist.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.theme2.setIcon(icon1)
-        self.theme2.setIconSize(QtCore.QSize(80, 80))
+        self.theme2.setIconSize(QtCore.QSize(30, 30))
         self.theme2.setObjectName("theme2")
         self.horizontalLayout_35.addWidget(self.theme2)
         self.verticalLayout_11.addLayout(self.horizontalLayout_35)
@@ -702,159 +720,23 @@ class Ui_MainWindow(object):
         self.account_page.setObjectName("account_page")
         self.verticalLayout_26 = QtWidgets.QVBoxLayout(self.account_page)
         self.verticalLayout_26.setObjectName("verticalLayout_26")
-        self.horizontalLayout_26 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
-        self.gridLayout_8 = QtWidgets.QGridLayout()
-        self.gridLayout_8.setObjectName("gridLayout_8")
-        self.lineEdit_plan = QtWidgets.QLineEdit(self.account_page)
-        self.lineEdit_plan.setEnabled(True)
-        self.lineEdit_plan.setReadOnly(True)
-        self.lineEdit_plan.setObjectName("lineEdit_plan")
-        self.gridLayout_8.addWidget(self.lineEdit_plan, 1, 1, 1, 1)
-        self.lineEdit_expires_on = QtWidgets.QLineEdit(self.account_page)
-        self.lineEdit_expires_on.setEnabled(True)
-        self.lineEdit_expires_on.setReadOnly(True)
-        self.lineEdit_expires_on.setObjectName("lineEdit_expires_on")
-        self.gridLayout_8.addWidget(self.lineEdit_expires_on, 2, 1, 1, 1)
-        self.lineEdit_account_id = QtWidgets.QLineEdit(self.account_page)
-        self.lineEdit_account_id.setEnabled(True)
-        self.lineEdit_account_id.setReadOnly(True)
-        self.lineEdit_account_id.setObjectName("lineEdit_account_id")
-        self.gridLayout_8.addWidget(self.lineEdit_account_id, 0, 1, 1, 1)
-        self.lineEdit_13 = QtWidgets.QLineEdit(self.account_page)
-        self.lineEdit_13.setEnabled(False)
-        self.lineEdit_13.setStyleSheet("")
-        self.lineEdit_13.setObjectName("lineEdit_13")
-        self.gridLayout_8.addWidget(self.lineEdit_13, 0, 0, 1, 1)
-        self.label_18 = QtWidgets.QLabel(self.account_page)
-        self.label_18.setText("")
-        self.label_18.setObjectName("label_18")
-        self.gridLayout_8.addWidget(self.label_18, 0, 2, 1, 1)
-        self.lineEdit_14 = QtWidgets.QLineEdit(self.account_page)
-        self.lineEdit_14.setEnabled(False)
-        self.lineEdit_14.setObjectName("lineEdit_14")
-        self.gridLayout_8.addWidget(self.lineEdit_14, 1, 0, 1, 1)
-        self.lineEdit_15 = QtWidgets.QLineEdit(self.account_page)
-        self.lineEdit_15.setEnabled(False)
-        self.lineEdit_15.setObjectName("lineEdit_15")
-        self.gridLayout_8.addWidget(self.lineEdit_15, 2, 0, 1, 1)
-        self.horizontalLayout_26.addLayout(self.gridLayout_8)
-        self.verticalLayout_26.addLayout(self.horizontalLayout_26)
-        self.horizontalLayout_31 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
-        self.verticalLayout_28 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_28.setObjectName("verticalLayout_28")
-        self.account_progress_bar = QtWidgets.QProgressBar(self.account_page)
-        self.account_progress_bar.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.account_progress_bar.sizePolicy().hasHeightForWidth())
-        self.account_progress_bar.setSizePolicy(sizePolicy)
-        self.account_progress_bar.setAutoFillBackground(False)
-        self.account_progress_bar.setStyleSheet("QProgressBar:horizontal {\n"
-"border-radius: 5px;\n"
-"background:rgba(0,0,0,0.1);\n"
-"padding: 1px;\n"
-"color: white;\n"
-"background-color: rgba(6, 60, 89, 1);\n"
-"height: 1px;\n"
-"\n"
-"\n"
-"}\n"
-"QProgressBar::chunk:horizontal {\n"
-"background:rgba(69, 182, 73, 1);\n"
-"border-radius: 5px;\n"
-"padding: 1px;\n"
-"color: white;\n"
-"\n"
-"}\n"
-"QProgressBar \n"
-"{ \n"
-"color: white; \n"
-"}\n"
-"")
-        self.account_progress_bar.setMaximum(100)
-        self.account_progress_bar.setProperty("value", 100)
-        self.account_progress_bar.setTextVisible(True)
-        self.account_progress_bar.setObjectName("account_progress_bar")
-        self.verticalLayout_28.addWidget(self.account_progress_bar)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.verticalLayout_28.addItem(spacerItem5)
-        self.error_message = QtWidgets.QLabel(self.account_page)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.error_message.sizePolicy().hasHeightForWidth())
-        self.error_message.setSizePolicy(sizePolicy)
-        self.error_message.setAlignment(QtCore.Qt.AlignCenter)
-        self.error_message.setObjectName("error_message")
-        self.verticalLayout_28.addWidget(self.error_message)
-        self.horizontalLayout_31.addLayout(self.verticalLayout_28)
-        self.verticalLayout_26.addLayout(self.horizontalLayout_31)
-        self.horizontalLayout_30 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
-        self.horizontalLayout_32 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
-        self.purchase_licence = QtWidgets.QPushButton(self.account_page)
-        self.purchase_licence.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.purchase_licence.sizePolicy().hasHeightForWidth())
-        self.purchase_licence.setSizePolicy(sizePolicy)
-        self.purchase_licence.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.purchase_licence.setStyleSheet("QPushButton {\n"
-"        padding: 5px;\n"
-"    padding-right: 8px;\n"
-"    padding-left: 8px;\n"
-"    background-color: rgba(69, 182, 73, 1);\n"
+        self.donate_button = QtWidgets.QPushButton(self.account_page)
+        self.donate_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.donate_button.setStyleSheet("QPushButton {\n"
+"    padding: 3px;\n"
+"    padding-right: 10px;\n"
+"    padding-left: 10px;\n"
+"    background-color:rgb(255, 170, 0);\n"
+"    border-radius: 5px;\n"
 "    color:black;\n"
 "\n"
 "}\n"
-"\n"
-"QPushButton:disabled {    \n"
-"background-color: rgb(48,48,48);\n"
-"}\n"
-"\n"
-"\n"
 "")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/resource/resource/shopping-cart.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.purchase_licence.setIcon(icon2)
-        self.purchase_licence.setIconSize(QtCore.QSize(18, 18))
-        self.purchase_licence.setObjectName("purchase_licence")
-        self.horizontalLayout_32.addWidget(self.purchase_licence)
-        self.refresh_account = QtWidgets.QPushButton(self.account_page)
-        self.refresh_account.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.refresh_account.sizePolicy().hasHeightForWidth())
-        self.refresh_account.setSizePolicy(sizePolicy)
-        self.refresh_account.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.refresh_account.setStyleSheet("QPushButton {\n"
-"        padding: 5px;\n"
-"    padding-right: 8px;\n"
-"    padding-left: 8px;\n"
-"    background-color: rgba(255, 170, 0, 150);\n"
-"    color:black;\n"
-"\n"
-"\n"
-"}\n"
-"QPushButton:disabled {    \n"
-"background-color: rgb(48,48,48);\n"
-"}\n"
-"\n"
-"")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/resource/resource/refresh--v1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.refresh_account.setIcon(icon3)
-        self.refresh_account.setIconSize(QtCore.QSize(18, 18))
-        self.refresh_account.setObjectName("refresh_account")
-        self.horizontalLayout_32.addWidget(self.refresh_account)
-        self.horizontalLayout_30.addLayout(self.horizontalLayout_32)
-        self.verticalLayout_26.addLayout(self.horizontalLayout_30)
+        icon2.addPixmap(QtGui.QPixmap(":/resource/resource/paypal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.donate_button.setIcon(icon2)
+        self.donate_button.setObjectName("donate_button")
+        self.verticalLayout_26.addWidget(self.donate_button)
         self.horizontalLayout_29 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_29.setObjectName("horizontalLayout_29")
         self.developer_info = QtWidgets.QTextBrowser(self.account_page)
@@ -864,6 +746,9 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.developer_info.sizePolicy().hasHeightForWidth())
         self.developer_info.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        self.developer_info.setFont(font)
         self.developer_info.setStyleSheet("")
         self.developer_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.developer_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
@@ -879,7 +764,24 @@ class Ui_MainWindow(object):
         self.warlordsoft_button = QtWidgets.QPushButton(self.account_page)
         self.warlordsoft_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.warlordsoft_button.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
+"    padding: 3px;\n"
+"    padding-right: 10px;\n"
+"    padding-left: 10px;\n"
+"    background-color:rgb(0, 153, 255);\n"
+"    border-radius: 5px;\n"
+"    color:black;\n"
+"\n"
+"}\n"
+"")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/resource/resource/link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.warlordsoft_button.setIcon(icon3)
+        self.warlordsoft_button.setObjectName("warlordsoft_button")
+        self.horizontalLayout_34.addWidget(self.warlordsoft_button)
+        self.rate_button = QtWidgets.QPushButton(self.account_page)
+        self.rate_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rate_button.setStyleSheet("QPushButton {\n"
+"    padding: 3px;\n"
 "    padding-right: 10px;\n"
 "    padding-left: 10px;\n"
 "    background-color:rgb(0, 153, 255);\n"
@@ -889,14 +791,14 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/resource/resource/link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.warlordsoft_button.setIcon(icon4)
-        self.warlordsoft_button.setObjectName("warlordsoft_button")
-        self.horizontalLayout_34.addWidget(self.warlordsoft_button)
-        self.donate_button = QtWidgets.QPushButton(self.account_page)
-        self.donate_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.donate_button.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
+        icon4.addPixmap(QtGui.QPixmap(":/resource/resource/facebook-like.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.rate_button.setIcon(icon4)
+        self.rate_button.setObjectName("rate_button")
+        self.horizontalLayout_34.addWidget(self.rate_button)
+        self.feedback_button = QtWidgets.QPushButton(self.account_page)
+        self.feedback_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.feedback_button.setStyleSheet("QPushButton {\n"
+"    padding: 3px;\n"
 "    padding-right: 10px;\n"
 "    padding-left: 10px;\n"
 "    background-color:rgb(0, 153, 255);\n"
@@ -906,42 +808,8 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/resource/resource/paypal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.donate_button.setIcon(icon5)
-        self.donate_button.setObjectName("donate_button")
-        self.horizontalLayout_34.addWidget(self.donate_button)
-        self.rate_button = QtWidgets.QPushButton(self.account_page)
-        self.rate_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.rate_button.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
-"    padding-right: 10px;\n"
-"    padding-left: 10px;\n"
-"    background-color:rgb(0, 153, 255);\n"
-"    border-radius: 5px;\n"
-"    color:black;\n"
-"\n"
-"}\n"
-"")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/resource/resource/facebook-like.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.rate_button.setIcon(icon6)
-        self.rate_button.setObjectName("rate_button")
-        self.horizontalLayout_34.addWidget(self.rate_button)
-        self.feedback_button = QtWidgets.QPushButton(self.account_page)
-        self.feedback_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.feedback_button.setStyleSheet("QPushButton {\n"
-"    padding: 5px;\n"
-"    padding-right: 10px;\n"
-"    padding-left: 10px;\n"
-"    background-color:rgb(0, 153, 255);\n"
-"    border-radius: 5px;\n"
-"    color:black;\n"
-"\n"
-"}\n"
-"")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/resource/resource/person-growth.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.feedback_button.setIcon(icon7)
+        icon5.addPixmap(QtGui.QPixmap(":/resource/resource/person-growth.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.feedback_button.setIcon(icon5)
         self.feedback_button.setObjectName("feedback_button")
         self.horizontalLayout_34.addWidget(self.feedback_button)
         self.horizontalLayout_33.addLayout(self.horizontalLayout_34)
@@ -955,17 +823,91 @@ class Ui_MainWindow(object):
         self.verticalLayout_29.setObjectName("verticalLayout_29")
         self.gridLayout_10 = QtWidgets.QGridLayout()
         self.gridLayout_10.setObjectName("gridLayout_10")
+        self.monitor_button = QtWidgets.QPushButton(self.main_home)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.monitor_button.sizePolicy().hasHeightForWidth())
+        self.monitor_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.monitor_button.setFont(font)
+        self.monitor_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.monitor_button.setStyleSheet("QPushButton {\n"
+"color: rgba(69, 182, 73, 1);\n"
+"    border-color: #76797C;\n"
+"    padding: 3px;\n"
+"    border-radius: 5px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"\n"
+"\n"
+"\n"
+"}\n"
+"QPushButton:hover {    \n"
+"background-color:  rgb(0, 77, 128);\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/resource/resource/severity.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.monitor_button.setIcon(icon6)
+        self.monitor_button.setIconSize(QtCore.QSize(55, 60))
+        self.monitor_button.setObjectName("monitor_button")
+        self.gridLayout_10.addWidget(self.monitor_button, 0, 1, 1, 1)
+        self.account_button = QtWidgets.QPushButton(self.main_home)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.account_button.sizePolicy().hasHeightForWidth())
+        self.account_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.account_button.setFont(font)
+        self.account_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.account_button.setStyleSheet("QPushButton {\n"
+"color: rgba(69, 182, 73, 1);\n"
+"    border-color: #76797C;\n"
+"    padding: 3px;\n"
+"    border-radius: 5px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"\n"
+"\n"
+"\n"
+"}\n"
+"QPushButton:hover {    \n"
+"background-color:  rgb(0, 77, 128);\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/resource/resource/check-male--v1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.account_button.setIcon(icon7)
+        self.account_button.setIconSize(QtCore.QSize(55, 60))
+        self.account_button.setObjectName("account_button")
+        self.gridLayout_10.addWidget(self.account_button, 0, 3, 1, 1)
         self.setting_button = QtWidgets.QPushButton(self.main_home)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.setting_button.sizePolicy().hasHeightForWidth())
         self.setting_button.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(10)
+        self.setting_button.setFont(font)
         self.setting_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.setting_button.setStyleSheet("QPushButton {\n"
-"    color:white;\n"
+"color: rgba(69, 182, 73, 1);\n"
 "    border-color: #76797C;\n"
-"    padding: 5px;\n"
+"    padding: 3px;\n"
 "    border-radius: 5px;\n"
 "    border-style: solid;\n"
 "    border-width: 1px;\n"
@@ -983,71 +925,9 @@ class Ui_MainWindow(object):
         icon8 = QtGui.QIcon()
         icon8.addPixmap(QtGui.QPixmap(":/resource/resource/horizontal-settings-mixer.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setting_button.setIcon(icon8)
-        self.setting_button.setIconSize(QtCore.QSize(75, 75))
+        self.setting_button.setIconSize(QtCore.QSize(55, 60))
         self.setting_button.setObjectName("setting_button")
-        self.gridLayout_10.addWidget(self.setting_button, 0, 1, 1, 1)
-        self.monitor_button = QtWidgets.QPushButton(self.main_home)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.monitor_button.sizePolicy().hasHeightForWidth())
-        self.monitor_button.setSizePolicy(sizePolicy)
-        self.monitor_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.monitor_button.setStyleSheet("QPushButton {\n"
-"    color:white;\n"
-"    border-color: #76797C;\n"
-"    padding: 5px;\n"
-"    border-radius: 5px;\n"
-"    border-style: solid;\n"
-"    border-width: 1px;\n"
-"\n"
-"\n"
-"\n"
-"}\n"
-"QPushButton:hover {    \n"
-"background-color:  rgb(0, 77, 128);\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/resource/resource/severity.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.monitor_button.setIcon(icon9)
-        self.monitor_button.setIconSize(QtCore.QSize(73, 76))
-        self.monitor_button.setObjectName("monitor_button")
-        self.gridLayout_10.addWidget(self.monitor_button, 0, 0, 1, 1)
-        self.account_button = QtWidgets.QPushButton(self.main_home)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.account_button.sizePolicy().hasHeightForWidth())
-        self.account_button.setSizePolicy(sizePolicy)
-        self.account_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.account_button.setStyleSheet("QPushButton {\n"
-"    color:white;\n"
-"    border-color: #76797C;\n"
-"    padding: 5px;\n"
-"    border-radius: 5px;\n"
-"    border-style: solid;\n"
-"    border-width: 1px;\n"
-"\n"
-"\n"
-"\n"
-"}\n"
-"QPushButton:hover {    \n"
-"background-color:  rgb(0, 77, 128);\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(":/resource/resource/check-male--v1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.account_button.setIcon(icon10)
-        self.account_button.setIconSize(QtCore.QSize(76, 76))
-        self.account_button.setObjectName("account_button")
-        self.gridLayout_10.addWidget(self.account_button, 0, 2, 1, 1)
+        self.gridLayout_10.addWidget(self.setting_button, 0, 2, 1, 1)
         self.verticalLayout_29.addLayout(self.gridLayout_10)
         self.verticalLayout_30.addLayout(self.verticalLayout_29)
         self.stackedWidget.addWidget(self.main_home)
@@ -1063,6 +943,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem5)
         self.home_button = QtWidgets.QPushButton(self.credits_bar)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -1072,10 +954,10 @@ class Ui_MainWindow(object):
         self.home_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.home_button.setStyleSheet("")
         self.home_button.setText("")
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/resource/resource/circled-menu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.home_button.setIcon(icon11)
-        self.home_button.setIconSize(QtCore.QSize(40, 30))
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap(":/resource/resource/circled-menu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.home_button.setIcon(icon9)
+        self.home_button.setIconSize(QtCore.QSize(40, 29))
         self.home_button.setObjectName("home_button")
         self.horizontalLayout_2.addWidget(self.home_button)
         self.speed = QtWidgets.QPushButton(self.credits_bar)
@@ -1087,10 +969,20 @@ class Ui_MainWindow(object):
         self.speed.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.speed.setStyleSheet("")
         self.speed.setText("")
-        self.speed.setIcon(icon9)
-        self.speed.setIconSize(QtCore.QSize(40, 33))
+        self.speed.setIcon(icon6)
+        self.speed.setIconSize(QtCore.QSize(40, 31))
         self.speed.setObjectName("speed")
         self.horizontalLayout_2.addWidget(self.speed)
+        self.label_title = QtWidgets.QLabel(self.credits_bar)
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setPointSize(12)
+        self.label_title.setFont(font)
+        self.label_title.setStyleSheet("color: rgba(69, 182, 73, 1);\n"
+"text-align: center;\n"
+"border:none;")
+        self.label_title.setObjectName("label_title")
+        self.horizontalLayout_2.addWidget(self.label_title)
         self.setting = QtWidgets.QPushButton(self.credits_bar)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -1101,7 +993,7 @@ class Ui_MainWindow(object):
         self.setting.setStyleSheet("")
         self.setting.setText("")
         self.setting.setIcon(icon8)
-        self.setting.setIconSize(QtCore.QSize(40, 30))
+        self.setting.setIconSize(QtCore.QSize(40, 28))
         self.setting.setObjectName("setting")
         self.horizontalLayout_2.addWidget(self.setting)
         self.account = QtWidgets.QPushButton(self.credits_bar)
@@ -1113,8 +1005,8 @@ class Ui_MainWindow(object):
         self.account.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.account.setStyleSheet("")
         self.account.setText("")
-        self.account.setIcon(icon10)
-        self.account.setIconSize(QtCore.QSize(40, 33))
+        self.account.setIcon(icon7)
+        self.account.setIconSize(QtCore.QSize(40, 32))
         self.account.setObjectName("account")
         self.horizontalLayout_2.addWidget(self.account)
         spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -1124,19 +1016,15 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_title.setText(_translate("MainWindow", "SpeedX™"))
+        self.label_13.setText(_translate("MainWindow", "\"If you control the code, you control the world.\""))
         self.btn_minimize.setToolTip(_translate("MainWindow", "Minimize"))
         self.btn_close.setToolTip(_translate("MainWindow", "Close"))
-        self.label.setText(_translate("MainWindow", "CPU USAGE"))
-        self.label_2.setText(_translate("MainWindow", "25%"))
-        self.label_3.setText(_translate("MainWindow", "Intel | i9 9900k"))
-        self.label_4.setText(_translate("MainWindow", "Temp: 45Cº"))
         self.label_5.setText(_translate("MainWindow", "INTERNET SPEED"))
         self.label_6.setText(_translate("MainWindow", "8.8"))
         self.label_7.setText(_translate("MainWindow", "MB/S"))
@@ -1144,8 +1032,11 @@ class Ui_MainWindow(object):
         self.label_9.setText(_translate("MainWindow", "RAM USAGE"))
         self.label_10.setText(_translate("MainWindow", "80%"))
         self.label_11.setText(_translate("MainWindow", "Total: 16 GB"))
-        self.label_12.setText(_translate("MainWindow", "FREE 2.0 GB"))
-        self.label_13.setText(_translate("MainWindow", "Hello how are you today!"))
+        self.label_12.setText(_translate("MainWindow", "Free 2.0 GB"))
+        self.label.setText(_translate("MainWindow", "CPU USAGE"))
+        self.label_2.setText(_translate("MainWindow", "25%"))
+        self.label_3.setText(_translate("MainWindow", "CPU Info"))
+        self.label_4.setText(_translate("MainWindow", "Temp: 45Cº"))
         self.label_21.setText(_translate("MainWindow", "App Settings"))
         self.label_19.setText(_translate("MainWindow", "Net Speed Unit          "))
         self.label_14.setText(_translate("MainWindow", "1"))
@@ -1162,31 +1053,24 @@ class Ui_MainWindow(object):
         self.label_20.setText(_translate("MainWindow", "Theme Settings"))
         self.theme1.setText(_translate("MainWindow", "Theme1 (Zesty-Blue)"))
         self.theme2.setText(_translate("MainWindow", "Theme2 (Grey)"))
-        self.lineEdit_plan.setText(_translate("MainWindow", "Evaluation"))
-        self.lineEdit_expires_on.setText(_translate("MainWindow", "Licence Expired! Purchase a new Licence"))
-        self.lineEdit_account_id.setText(_translate("MainWindow", "8fjfdjhqoifj383ld"))
-        self.lineEdit_13.setText(_translate("MainWindow", "Account ID:"))
-        self.lineEdit_14.setText(_translate("MainWindow", "Account Type:"))
-        self.lineEdit_15.setText(_translate("MainWindow", "Account Status:"))
-        self.error_message.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ef2929;\">Error Message</span></p></body></html>"))
-        self.purchase_licence.setText(_translate("MainWindow", "Purchase Now"))
-        self.refresh_account.setText(_translate("MainWindow", "Refresh Account"))
+        self.donate_button.setText(_translate("MainWindow", "Donate"))
         self.developer_info.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/resource/resource/speedx.png\" height=\"50\" /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#d1d1d1;\">Developed by:</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#d1d1d1;\">Rishabh bhardwaj (S.D.E)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#d1d1d1;\">Email me: </span><a href=\"mailto: contact@warlordsoftwares.in\"><span style=\" text-decoration: underline; color:#d1d1d1;\">contact@warlordsoftwares.in</span></a></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#d1d1d1;\">Version: </span><span style=\" font-weight:600; color:#d1d1d1;\">0.01 | </span><span style=\" color:#d1d1d1;\">Language used: </span><span style=\" font-weight:600; color:#d1d1d1;\">Python | </span><a href=\"https://snapcraft.io/search?q=rishabh\"><span style=\" text-decoration: underline; color:#d1d1d1;\">Get more apps</span></a></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#d1d1d1;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'URW Gothic\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/resource/resource/speedx.png\" height=\"20\" /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\">Developed by: </span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; color:#35a849;\">Rishabh bhardwaj (S.D.E)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\">Version: </span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; color:#35a849;\">0.2 | </span><a href=\"https://snapcraft.io/search?q=rishabh\"><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; text-decoration: underline; color:#ef2929;\">Get more apps</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; color:#35a849;\">Support Request:</span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\">   If you like this Application, then please support the developer by donation. Your donations make me </span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; color:#35a849;\">feel motivated</span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"> to my work. Thanks!  Expect </span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; color:#35a849;\">new updates</span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"> in near future!</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:10pt; font-weight:600; color:#35a849;\">Donaters Name</span><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"> and Amount will be displayed in @ </span><a href=\"https://warlordsoftwares.in/warlord_soft/dashboard/\"><span style=\" font-family:\'Ubuntu\'; font-weight:600; text-decoration: underline; color:#ef2929;\">warlordsoft page</span></a><span style=\" font-family:\'Ubuntu\'; font-size:10pt; color:#35a849;\"> as a Thanksgiving notes!</span></p></body></html>"))
         self.warlordsoft_button.setText(_translate("MainWindow", "Visit @WarlordSoft"))
-        self.donate_button.setText(_translate("MainWindow", "Donate"))
         self.rate_button.setText(_translate("MainWindow", "Rate"))
         self.feedback_button.setText(_translate("MainWindow", "Feedback"))
-        self.setting_button.setText(_translate("MainWindow", "Settings"))
         self.monitor_button.setText(_translate("MainWindow", "Monitor"))
-        self.account_button.setText(_translate("MainWindow", "Account"))
+        self.account_button.setText(_translate("MainWindow", "About"))
+        self.setting_button.setText(_translate("MainWindow", "Settings"))
+        self.label_title.setText(_translate("MainWindow", "SpeedX™"))
 import resource_rc

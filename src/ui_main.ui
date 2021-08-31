@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>500</height>
+    <width>668</width>
+    <height>395</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>850</width>
-    <height>500</height>
+    <width>200</width>
+    <height>200</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -141,20 +141,32 @@ border-radius: 10px;
               <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_title">
+              <widget class="QLabel" name="label_13">
+               <property name="maximumSize">
+                <size>
+                 <width>451</width>
+                 <height>21</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
-                 <family>Roboto</family>
-                 <pointsize>14</pointsize>
+                 <family>URW Gothic</family>
+                 <pointsize>12</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
                 <string notr="true">color: rgba(69, 182, 73, 1);
-text-align: center;
-border:none;</string>
+background-color: none;
+border-radius: 20px;</string>
                </property>
                <property name="text">
-                <string>SpeedX™</string>
+                <string>&quot;If you control the code, you control the world.&quot;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -282,7 +294,7 @@ QPushButton:hover {
              <string notr="true">background-color: none;</string>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_home">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -318,446 +330,422 @@ QPushButton:hover {
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_4">
-                    <item>
-                     <widget class="QFrame" name="frame_circle_1">
-                      <property name="minimumSize">
-                       <size>
-                        <width>250</width>
-                        <height>250</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>250</width>
-                        <height>250</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QFrame{
+                   <widget class="QFrame" name="frame_circle_2">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>0</y>
+                      <width>250</width>
+                      <height>250</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>250</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QFrame{
 	border: 5px solid rgb(60, 231, 195);
 	border-radius: 125px;
 }
 QFrame:hover {
 	border: 5px solid rgb(105, 95, 148);
 }</string>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_6">
-                       <property name="spacing">
-                        <number>10</number>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_7">
+                     <property name="spacing">
+                      <number>10</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>10</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>50</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>10</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>50</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_5">
+                       <property name="font">
+                        <font>
+                         <family>URW Gothic</family>
+                         <pointsize>11</pointsize>
+                        </font>
                        </property>
-                       <property name="leftMargin">
-                        <number>10</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>50</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>10</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>50</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label">
-                         <property name="font">
-                          <font>
-                           <family>Roboto</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                       <property name="styleSheet">
+                        <string notr="true">border: none;
 color: rgb(60, 231, 195);</string>
-                         </property>
-                         <property name="text">
-                          <string>CPU USAGE</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_2">
-                         <property name="font">
-                          <font>
-                           <family>Sans Serif</family>
-                           <pointsize>48</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                       </property>
+                       <property name="text">
+                        <string>INTERNET SPEED</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_6">
+                       <property name="font">
+                        <font>
+                         <family>Sans Serif</family>
+                         <pointsize>44</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border: none;
 color: rgb(220,220,220);</string>
-                         </property>
-                         <property name="text">
-                          <string>25%</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_3">
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                       </property>
+                       <property name="text">
+                        <string>8.8</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_7">
+                       <property name="font">
+                        <font>
+                         <family>URW Gothic</family>
+                         <pointsize>11</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border: none;
  color: rgb(128, 102, 168);</string>
-                         </property>
-                         <property name="text">
-                          <string>Intel | i9 9900k</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_4">
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                       </property>
+                       <property name="text">
+                        <string>MB/S</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_8">
+                       <property name="font">
+                        <font>
+                         <family>URW Gothic</family>
+                         <pointsize>11</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border: none;
 color: rgb(60, 231, 195);</string>
-                         </property>
-                         <property name="text">
-                          <string>Temp: 45Cº</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_circle_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>250</width>
-                        <height>250</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>250</width>
-                        <height>250</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QFrame{
+                       </property>
+                       <property name="text">
+                        <string>No Internet</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QFrame" name="frame_circle_3">
+                    <property name="geometry">
+                     <rect>
+                      <x>440</x>
+                      <y>40</y>
+                      <width>170</width>
+                      <height>170</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>170</width>
+                      <height>170</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>170</width>
+                      <height>170</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QFrame{
 	border: 5px solid rgb(60, 231, 195);
-	border-radius: 125px;
+	border-radius: 85px;
 }
 QFrame:hover {
 	border: 5px solid rgb(105, 95, 148);
 }</string>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_7">
-                       <property name="spacing">
-                        <number>10</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>10</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>50</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>10</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>50</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label_5">
-                         <property name="font">
-                          <font>
-                           <family>Roboto</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <widget class="QLabel" name="label_9">
+                     <property name="geometry">
+                      <rect>
+                       <x>40</x>
+                       <y>30</y>
+                       <width>91</width>
+                       <height>20</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>URW Gothic</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
 color: rgb(60, 231, 195);</string>
-                         </property>
-                         <property name="text">
-                          <string>INTERNET SPEED</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_6">
-                         <property name="font">
-                          <font>
-                           <family>Sans Serif</family>
-                           <pointsize>48</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                     </property>
+                     <property name="text">
+                      <string>RAM USAGE</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_10">
+                     <property name="geometry">
+                      <rect>
+                       <x>20</x>
+                       <y>60</y>
+                       <width>140</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Sans Serif</family>
+                       <pointsize>25</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
 color: rgb(220,220,220);</string>
-                         </property>
-                         <property name="text">
-                          <string>8.8</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_7">
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                     </property>
+                     <property name="text">
+                      <string>80%</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_11">
+                     <property name="geometry">
+                      <rect>
+                       <x>40</x>
+                       <y>100</y>
+                       <width>91</width>
+                       <height>20</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>URW Gothic</family>
+                       <pointsize>8</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
  color: rgb(128, 102, 168);</string>
-                         </property>
-                         <property name="text">
-                          <string>MB/S</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_8">
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                     </property>
+                     <property name="text">
+                      <string>Total: 16 GB</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_12">
+                     <property name="geometry">
+                      <rect>
+                       <x>50</x>
+                       <y>120</y>
+                       <width>71</width>
+                       <height>20</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>URW Gothic</family>
+                       <pointsize>8</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
 color: rgb(60, 231, 195);</string>
-                         </property>
-                         <property name="text">
-                          <string>No Internet</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_circle_3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>250</width>
-                        <height>250</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>250</width>
-                        <height>250</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QFrame{
+                     </property>
+                     <property name="text">
+                      <string>Free 2.0 GB</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </widget>
+                   <widget class="QFrame" name="frame_circle_1">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>40</y>
+                      <width>170</width>
+                      <height>170</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>170</width>
+                      <height>170</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>170</width>
+                      <height>170</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QFrame{
 	border: 5px solid rgb(60, 231, 195);
-	border-radius: 125px;
+	border-radius: 85px;
 }
 QFrame:hover {
 	border: 5px solid rgb(105, 95, 148);
 }</string>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_8">
-                       <property name="spacing">
-                        <number>10</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>10</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>50</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>10</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>50</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label_9">
-                         <property name="font">
-                          <font>
-                           <family>Roboto</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <widget class="QLabel" name="label">
+                     <property name="geometry">
+                      <rect>
+                       <x>40</x>
+                       <y>30</y>
+                       <width>81</width>
+                       <height>20</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>URW Gothic</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
 color: rgb(60, 231, 195);</string>
-                         </property>
-                         <property name="text">
-                          <string>RAM USAGE</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_10">
-                         <property name="font">
-                          <font>
-                           <family>Sans Serif</family>
-                           <pointsize>48</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                     </property>
+                     <property name="text">
+                      <string>CPU USAGE</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_2">
+                     <property name="geometry">
+                      <rect>
+                       <x>30</x>
+                       <y>60</y>
+                       <width>111</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Sans Serif</family>
+                       <pointsize>25</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
 color: rgb(220,220,220);</string>
-                         </property>
-                         <property name="text">
-                          <string>80%</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_11">
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                     </property>
+                     <property name="text">
+                      <string>25%</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_3">
+                     <property name="geometry">
+                      <rect>
+                       <x>50</x>
+                       <y>100</y>
+                       <width>71</width>
+                       <height>20</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>URW Gothic</family>
+                       <pointsize>8</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
  color: rgb(128, 102, 168);</string>
-                         </property>
-                         <property name="text">
-                          <string>Total: 16 GB</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_12">
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans</family>
-                           <pointsize>11</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border: none;
+                     </property>
+                     <property name="text">
+                      <string>CPU Info</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_4">
+                     <property name="geometry">
+                      <rect>
+                       <x>40</x>
+                       <y>120</y>
+                       <width>91</width>
+                       <height>16</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>URW Gothic</family>
+                       <pointsize>8</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border: none;
 color: rgb(60, 231, 195);</string>
-                         </property>
-                         <property name="text">
-                          <string>FREE 2.0 GB</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignHCenter">
-                  <widget class="QFrame" name="frame_texts">
-                   <property name="minimumSize">
-                    <size>
-                     <width>600</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>45</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_10">
-                    <item>
-                     <widget class="QLabel" name="label_13">
-                      <property name="maximumSize">
-                       <size>
-                        <width>600</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Ubuntu</family>
-                        <pointsize>16</pointsize>
-                        <weight>50</weight>
-                        <italic>false</italic>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color: rgb(211, 215, 207);
-font: 16pt &quot;Ubuntu&quot;;
-</string>
-                      </property>
-                      <property name="text">
-                       <string>Hello how are you today!</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
+                     </property>
+                     <property name="text">
+                      <string>Temp: 45Cº</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </widget>
                   </widget>
                  </item>
                  <item>
@@ -817,6 +805,7 @@ color:#d1d1d1;</string>
                   </property>
                   <property name="font">
                    <font>
+                    <family>URW Gothic</family>
                     <pointsize>12</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -839,6 +828,12 @@ color:#d1d1d1;</string>
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
                   </property>
                   <property name="text">
                    <string>Net Speed Unit          </string>
@@ -891,6 +886,12 @@ color:#d1d1d1;</string>
                 </item>
                 <item row="3" column="4">
                  <widget class="QLabel" name="label_14">
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>1</string>
                   </property>
@@ -907,6 +908,12 @@ color:#d1d1d1;</string>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>Net Speed Freq          </string>
                   </property>
@@ -919,6 +926,12 @@ color:#d1d1d1;</string>
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QComboBox {
@@ -1002,6 +1015,11 @@ QComboBox::down-arrow:focus {
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>CPU Indicator Freq          </string>
                   </property>
@@ -1014,6 +1032,12 @@ QComboBox::down-arrow:focus {
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
                   </property>
                   <property name="text">
                    <string>RAM Indicator Freq          </string>
@@ -1048,6 +1072,12 @@ QComboBox::down-arrow:focus {
                 </item>
                 <item row="2" column="4">
                  <widget class="QLabel" name="label_15">
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>1</string>
                   </property>
@@ -1058,6 +1088,12 @@ QComboBox::down-arrow:focus {
                 </item>
                 <item row="4" column="4">
                  <widget class="QLabel" name="label_16">
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>1</string>
                   </property>
@@ -1136,6 +1172,12 @@ QComboBox::down-arrow:focus {
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>CPU Temp Unit          </string>
                   </property>
@@ -1148,6 +1190,12 @@ QComboBox::down-arrow:focus {
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                    <pointsize>10</pointsize>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QComboBox {
@@ -1250,6 +1298,7 @@ QComboBox::down-arrow:focus {
                   </property>
                   <property name="font">
                    <font>
+                    <family>URW Gothic</family>
                     <pointsize>12</pointsize>
                    </font>
                   </property>
@@ -1270,6 +1319,12 @@ QComboBox::down-arrow:focus {
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Ubuntu</family>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
@@ -1277,7 +1332,7 @@ QComboBox::down-arrow:focus {
                    <string notr="true">QPushButton {
 	color:white;
     border-color: #76797C;
-    padding: 10px;
+    padding: 1px;
     border-radius: 5px;
     border-style: solid;
 	border-width: 1px;
@@ -1295,8 +1350,8 @@ QComboBox::down-arrow:focus {
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>80</width>
-                    <height>80</height>
+                    <width>30</width>
+                    <height>30</height>
                    </size>
                   </property>
                  </widget>
@@ -1309,6 +1364,12 @@ QComboBox::down-arrow:focus {
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Ubuntu</family>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
@@ -1316,7 +1377,7 @@ QComboBox::down-arrow:focus {
                    <string notr="true">QPushButton {
 	color:white;
     border-color: #76797C;
-    padding: 10px;
+    padding: 1px;
     border-radius: 5px;
     border-style: solid;
 	border-width: 1px;
@@ -1335,8 +1396,8 @@ QComboBox::down-arrow:focus {
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>80</width>
-                    <height>80</height>
+                    <width>30</width>
+                    <height>30</height>
                    </size>
                   </property>
                  </widget>
@@ -1353,276 +1414,30 @@ color:#d1d1d1;</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_26">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_26">
-                <item>
-                 <layout class="QGridLayout" name="gridLayout_8">
-                  <item row="1" column="1">
-                   <widget class="QLineEdit" name="lineEdit_plan">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="text">
-                     <string>Evaluation</string>
-                    </property>
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QLineEdit" name="lineEdit_expires_on">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="text">
-                     <string>Licence Expired! Purchase a new Licence</string>
-                    </property>
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QLineEdit" name="lineEdit_account_id">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="text">
-                     <string>8fjfdjhqoifj383ld</string>
-                    </property>
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QLineEdit" name="lineEdit_13">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Account ID:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QLabel" name="label_18">
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLineEdit" name="lineEdit_14">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
-                    <property name="text">
-                     <string>Account Type:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLineEdit" name="lineEdit_15">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
-                    <property name="text">
-                     <string>Account Status:</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_31">
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_28">
-                  <item>
-                   <widget class="QProgressBar" name="account_progress_bar">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="autoFillBackground">
-                     <bool>false</bool>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QProgressBar:horizontal {
-border-radius: 5px;
-background:rgba(0,0,0,0.1);
-padding: 1px;
-color: white;
-background-color: rgba(6, 60, 89, 1);
-height: 1px;
-
-
-}
-QProgressBar::chunk:horizontal {
-background:rgba(69, 182, 73, 1);
-border-radius: 5px;
-padding: 1px;
-color: white;
-
-}
-QProgressBar 
-{ 
-color: white; 
-}
-</string>
-                    </property>
-                    <property name="maximum">
-                     <number>100</number>
-                    </property>
-                    <property name="value">
-                     <number>100</number>
-                    </property>
-                    <property name="textVisible">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_8">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="error_message">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ef2929;&quot;&gt;Error Message&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_30">
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_32">
-                  <item>
-                   <widget class="QPushButton" name="purchase_licence">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-		padding: 5px;
-	padding-right: 8px;
-	padding-left: 8px;
-	background-color: rgba(69, 182, 73, 1);
+               <widget class="QPushButton" name="donate_button">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	padding: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color:rgb(255, 170, 0);
+	border-radius: 5px;
 	color:black;
 
 }
-
-QPushButton:disabled {	
-background-color: rgb(48,48,48);
-}
-
-
 </string>
-                    </property>
-                    <property name="text">
-                     <string>Purchase Now</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resource.qrc">
-                      <normaloff>:/resource/resource/shopping-cart.png</normaloff>:/resource/resource/shopping-cart.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>18</width>
-                      <height>18</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="refresh_account">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-		padding: 5px;
-	padding-right: 8px;
-	padding-left: 8px;
-	background-color: rgba(255, 170, 0, 150);
-	color:black;
-
-
-}
-QPushButton:disabled {	
-background-color: rgb(48,48,48);
-}
-
-</string>
-                    </property>
-                    <property name="text">
-                     <string>Refresh Account</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resource.qrc">
-                      <normaloff>:/resource/resource/refresh--v1.png</normaloff>:/resource/resource/refresh--v1.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>18</width>
-                      <height>18</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
+                </property>
+                <property name="text">
+                 <string>Donate</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resource.qrc">
+                  <normaloff>:/resource/resource/paypal.png</normaloff>:/resource/resource/paypal.png</iconset>
+                </property>
+               </widget>
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_29">
@@ -1636,6 +1451,11 @@ background-color: rgb(48,48,48);
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>URW Gothic</family>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true"/>
@@ -1653,14 +1473,15 @@ background-color: rgb(48,48,48);
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/resource/resource/speedx.png&quot; height=&quot;50&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#d1d1d1;&quot;&gt;Developed by:&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#d1d1d1;&quot;&gt;Rishabh bhardwaj (S.D.E)&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#d1d1d1;&quot;&gt;Email me: &lt;/span&gt;&lt;a href=&quot;mailto: contact@warlordsoftwares.in&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#d1d1d1;&quot;&gt;contact@warlordsoftwares.in&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#d1d1d1;&quot;&gt;Version: &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#d1d1d1;&quot;&gt;0.01 | &lt;/span&gt;&lt;span style=&quot; color:#d1d1d1;&quot;&gt;Language used: &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#d1d1d1;&quot;&gt;Python | &lt;/span&gt;&lt;a href=&quot;https://snapcraft.io/search?q=rishabh&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#d1d1d1;&quot;&gt;Get more apps&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#d1d1d1;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'URW Gothic'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/resource/resource/speedx.png&quot; height=&quot;20&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt;Developed by: &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; color:#35a849;&quot;&gt;Rishabh bhardwaj (S.D.E)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt;Version: &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; color:#35a849;&quot;&gt;0.2 | &lt;/span&gt;&lt;a href=&quot;https://snapcraft.io/search?q=rishabh&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; text-decoration: underline; color:#ef2929;&quot;&gt;Get more apps&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; color:#35a849;&quot;&gt;Support Request:&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt;   If you like this Application, then please support the developer by donation. Your donations make me &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; color:#35a849;&quot;&gt;feel motivated&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt; to my work. Thanks!  Expect &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; color:#35a849;&quot;&gt;new updates&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt; in near future!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:600; color:#35a849;&quot;&gt;Donaters Name&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt; and Amount will be displayed in @ &lt;/span&gt;&lt;a href=&quot;https://warlordsoftwares.in/warlord_soft/dashboard/&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-weight:600; text-decoration: underline; color:#ef2929;&quot;&gt;warlordsoft page&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:10pt; color:#35a849;&quot;&gt; as a Thanksgiving notes!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="openExternalLinks">
                    <bool>true</bool>
@@ -1680,7 +1501,7 @@ p, li { white-space: pre-wrap; }
                     </property>
                     <property name="styleSheet">
                      <string notr="true">QPushButton {
-	padding: 5px;
+	padding: 3px;
 	padding-right: 10px;
 	padding-left: 10px;
 	background-color:rgb(0, 153, 255);
@@ -1700,39 +1521,13 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="donate_button">
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-	padding: 5px;
-	padding-right: 10px;
-	padding-left: 10px;
-	background-color:rgb(0, 153, 255);
-	border-radius: 5px;
-	color:black;
-
-}
-</string>
-                    </property>
-                    <property name="text">
-                     <string>Donate</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resource.qrc">
-                      <normaloff>:/resource/resource/paypal.png</normaloff>:/resource/resource/paypal.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
                    <widget class="QPushButton" name="rate_button">
                     <property name="cursor">
                      <cursorShape>PointingHandCursor</cursorShape>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">QPushButton {
-	padding: 5px;
+	padding: 3px;
 	padding-right: 10px;
 	padding-left: 10px;
 	background-color:rgb(0, 153, 255);
@@ -1758,7 +1553,7 @@ p, li { white-space: pre-wrap; }
                     </property>
                     <property name="styleSheet">
                      <string notr="true">QPushButton {
-	padding: 5px;
+	padding: 3px;
 	padding-right: 10px;
 	padding-left: 10px;
 	background-color:rgb(0, 153, 255);
@@ -1790,52 +1585,6 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <layout class="QGridLayout" name="gridLayout_10">
                   <item row="0" column="1">
-                   <widget class="QPushButton" name="setting_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-	color:white;
-    border-color: #76797C;
-    padding: 5px;
-    border-radius: 5px;
-    border-style: solid;
-	border-width: 1px;
-
-
-
-}
-QPushButton:hover {	
-background-color:  rgb(0, 77, 128);
-}
-
-
-
-</string>
-                    </property>
-                    <property name="text">
-                     <string>Settings</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resource.qrc">
-                      <normaloff>:/resource/resource/horizontal-settings-mixer.png</normaloff>:/resource/resource/horizontal-settings-mixer.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>75</width>
-                      <height>75</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
                    <widget class="QPushButton" name="monitor_button">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -1843,14 +1592,20 @@ background-color:  rgb(0, 77, 128);
                       <verstretch>0</verstretch>
                      </sizepolicy>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>URW Gothic</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
                     <property name="cursor">
                      <cursorShape>PointingHandCursor</cursorShape>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">QPushButton {
-	color:white;
+color: rgba(69, 182, 73, 1);
     border-color: #76797C;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
     border-style: solid;
 	border-width: 1px;
@@ -1875,13 +1630,13 @@ background-color:  rgb(0, 77, 128);
                     </property>
                     <property name="iconSize">
                      <size>
-                      <width>73</width>
-                      <height>76</height>
+                      <width>55</width>
+                      <height>60</height>
                      </size>
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="2">
+                  <item row="0" column="3">
                    <widget class="QPushButton" name="account_button">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -1889,14 +1644,20 @@ background-color:  rgb(0, 77, 128);
                       <verstretch>0</verstretch>
                      </sizepolicy>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>URW Gothic</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
                     <property name="cursor">
                      <cursorShape>PointingHandCursor</cursorShape>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">QPushButton {
-	color:white;
+color: rgba(69, 182, 73, 1);
     border-color: #76797C;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
     border-style: solid;
 	border-width: 1px;
@@ -1913,7 +1674,7 @@ background-color:  rgb(0, 77, 128);
 </string>
                     </property>
                     <property name="text">
-                     <string>Account</string>
+                     <string>About</string>
                     </property>
                     <property name="icon">
                      <iconset resource="resource.qrc">
@@ -1921,8 +1682,60 @@ background-color:  rgb(0, 77, 128);
                     </property>
                     <property name="iconSize">
                      <size>
-                      <width>76</width>
-                      <height>76</height>
+                      <width>55</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QPushButton" name="setting_button">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>URW Gothic</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+color: rgba(69, 182, 73, 1);
+    border-color: #76797C;
+    padding: 3px;
+    border-radius: 5px;
+    border-style: solid;
+	border-width: 1px;
+
+
+
+}
+QPushButton:hover {	
+background-color:  rgb(0, 77, 128);
+}
+
+
+
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Settings</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="resource.qrc">
+                      <normaloff>:/resource/resource/horizontal-settings-mixer.png</normaloff>:/resource/resource/horizontal-settings-mixer.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>55</width>
+                      <height>60</height>
                      </size>
                     </property>
                    </widget>
@@ -1972,6 +1785,19 @@ background-color:  rgb(0, 77, 128);
            <number>0</number>
           </property>
           <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QPushButton" name="home_button">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1995,7 +1821,7 @@ background-color:  rgb(0, 77, 128);
             <property name="iconSize">
              <size>
               <width>40</width>
-              <height>30</height>
+              <height>29</height>
              </size>
             </property>
            </widget>
@@ -2024,8 +1850,26 @@ background-color:  rgb(0, 77, 128);
             <property name="iconSize">
              <size>
               <width>40</width>
-              <height>33</height>
+              <height>31</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_title">
+            <property name="font">
+             <font>
+              <family>URW Gothic</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgba(69, 182, 73, 1);
+text-align: center;
+border:none;</string>
+            </property>
+            <property name="text">
+             <string>SpeedX™</string>
             </property>
            </widget>
           </item>
@@ -2053,7 +1897,7 @@ background-color:  rgb(0, 77, 128);
             <property name="iconSize">
              <size>
               <width>40</width>
-              <height>30</height>
+              <height>28</height>
              </size>
             </property>
            </widget>
@@ -2082,7 +1926,7 @@ background-color:  rgb(0, 77, 128);
             <property name="iconSize">
              <size>
               <width>40</width>
-              <height>33</height>
+              <height>32</height>
              </size>
             </property>
            </widget>
@@ -2111,6 +1955,7 @@ background-color:  rgb(0, 77, 128);
  </widget>
  <resources>
   <include location="resource.qrc"/>
+  <include location="../../htop/src/resource.qrc"/>
  </resources>
  <connections/>
 </ui>
