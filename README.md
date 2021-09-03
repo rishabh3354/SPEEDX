@@ -1,13 +1,22 @@
-**SPEEDX** is a linux based desktop application for **Monitoring Internet speed** with system moniter in **COOL graphics**. . Some Main features are -
+Summary: INTERNET SPEED MONITOR WITH CPU AND RAM USAGE UTILITY
 
-* Realtime Internet speed indicator (Combine upload/download speed)
-* RAM Usage moniter. ( Used percent, available, total memory)
-* CPU Usage monitor. ( CPU percentage, Temp C, CPU Name etc)
-* New feature comming soon!
+**SPEEDX** is a Best GUI looking Application for **Monitoring Internet speed** with **System Monitor** Utility.
+  
+**Main features of Speedx:-**
 
-**NOTE:**    	if CPU Temp is not comming, then run below command in your terminal.
+-   Realtime Internet speed indicator (Combine upload/download speed)
+-   RAM Usage moniter. ( Used percent, available, total memory)
+-   CPU Usage monitor. ( CPU percentage, Temp C, CPU Name etc)
+-   App settings for adjust frequencies and measure units.
+-   New feature comming soon!
 
-    sudo snap connect speedx:hardware-observe
+**Note:**  If Your are Facing any Issues with the App, then Run below command in Your Terminal/Shell.
+
+`sudo snap refresh speedx`
+
+`sudo snap refresh pyqt5-runtime-lite`
+
+Keywords: SolarWinds Server and Application Monitor, eG Innovations, Datadog, NinjaRMM, Site24x7, Sematext, Atera, PRTG, Zabbix, Spiceworks Network Monitor, Nagios, OpManager by ManageEngine, WhatsUp Gold, Cacti, Icinga, OpenNMS, htop, htop gui, glances, cpu usage, ram usage, internet speed usage, net speed, net speed indicator, storage, free ram
 
 **To Install, use cmd:**
 
