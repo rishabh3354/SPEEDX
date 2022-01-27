@@ -1,22 +1,43 @@
-Summary: INTERNET SPEED MONITOR WITH CPU AND RAM USAGE UTILITY
+**IMPORTANT NOTE :#**
+
+**IF APP IS NOT LAUNCHING AFTER INSTALL, THEN RUN CMD BELOW IN YOUR SHELL.****
+
+    sudo snap remove speedx && sudo snap install speedx && sudo snap refresh speedx && sudo snap install pyqt5-runtime-lite && sudo snap refresh pyqt5-runtime-lite && speedx
+    
+***FYI:***  *Be Patient, Sometimes Snap Applications Takes A While To Launch At First Time Installations*
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+**ABOUT APPLICATION :**
 
 **SPEEDX** is a Best GUI looking Application for **Monitoring Internet speed** with **System Monitor** Utility.
-  
-**Main features of Speedx:-**
 
--   Realtime Internet speed indicator (Combine upload/download speed)
--   RAM Usage moniter. ( Used percent, available, total memory)
+
+**FEATURES :** 
+
+ -   Realtime Internet speed indicator (Combine upload/download speed)
+-   RAM Usage monitor. ( Used percent, available, total memory)
 -   CPU Usage monitor. ( CPU percentage, Temp C, CPU Name etc)
 -   App settings for adjust frequencies and measure units.
 -   New feature comming soon!
 
-**Note:**  If Your are Facing any Issues with the App, then Run below command in Your Terminal/Shell.
+**NOTE  #1**
 
-`sudo snap refresh speedx`
+ubuntu-restricted-extras package allows users to install ability to play popular non-free media formats, including DVD, MP3, Quicktime, and Windows Media formats. without this you would not be able to play videos inside the app.
 
-`sudo snap refresh pyqt5-runtime-lite`
+    sudo apt-get install ubuntu-restricted-extras
 
-Keywords: SolarWinds Server and Application Monitor, eG Innovations, Datadog, NinjaRMM, Site24x7, Sematext, Atera, PRTG, Zabbix, Spiceworks Network Monitor, Nagios, OpManager by ManageEngine, WhatsUp Gold, Cacti, Icinga, OpenNMS, htop, htop gui, glances, cpu usage, ram usage, internet speed usage, net speed, net speed indicator, storage, free ram
+**NOTE  #2**  
+
+If CPU Temp is not Coming/not accurate in the System Monitor, then run below command in your Terminal/Shell.
+
+    sudo snap connect speedx:hardware-observe
+
+**KEYWORDS:** 
+
+*SolarWinds Server and Application Monitor, eG Innovations, Datadog, NinjaRMM, Site24x7, Sematext, Atera, PRTG, Zabbix, Spiceworks Network Monitor, Nagios, OpManager by ManageEngine, WhatsUp Gold, Cacti, Icinga, OpenNMS, htop, htop gui, glances, cpu usage, ram usage, internet speed usage, net speed, net speed indicator, storage, free ram*
+
+-------------------------------------------------------------------------------------------------------
 
 **To Install, use cmd:**
 
