@@ -238,7 +238,7 @@ class MainWindow(QMainWindow):
     """
 
     def redirect_to_warlordsoft(self):
-        warlord_soft_link = "https://warlordsoftwares.in/warlord_soft/dashboard/"
+        warlord_soft_link = "https://warlordsoftwares.com/warlord_soft/dashboard/"
         webbrowser.open(warlord_soft_link)
 
     def redirect_to_paypal_donation(self):
@@ -249,7 +249,7 @@ class MainWindow(QMainWindow):
         QDesktopServices.openUrl(QUrl("snap://speedx"))
 
     def redirect_to_feedback_button(self):
-        feedback_link = "https://warlordsoftwares.in/contact_us/"
+        feedback_link = "https://warlordsoftwares.com/contact_us/"
         webbrowser.open(feedback_link)
 
     def theme1_clicked(self):
