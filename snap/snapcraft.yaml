@@ -1,16 +1,18 @@
 name: speedx
-base: core18 # the base snap is the execution environment for this snap
-version: '2024.1.2' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Internet speed monitor with cpu and ram usage utility
-description: |
-  A linux based desktop application for Monitoring Internet speed with system moniter in cool graphics.
-grade: stable # must be 'stable' to release into candidate/stable channels  / before dev use devel
-confinement: strict # use 'strict' once you have the right plugs and slots / before dev use devmode
+base: core22
+version: '2026.7.2'
+summary: Realtime internet speed monitor
+description: A linux based desktop application for Monitoring Internet speed with system monitor in cool graphics.
+grade: stable
+confinement: strict
 
 icon: snap/gui/icon.png
 
 architectures:
   - build-on: [amd64]
+
+environment:
+  SNAP_DESKTOP_RUNTIME: $SNAP/pyqt5-runtime-core22-lite
 
 apps:
   speedx:
@@ -46,10 +48,10 @@ plugs:
     interface: content
     target: $SNAP/data-dir/sounds
     default-provider: gtk-common-themes
-  pyqt5-runtime-lite:
+  pyqt5-runtime-core22-lite:
     interface: content
-    target: $SNAP/pyqt5-runtime-lite
-    default-provider: pyqt5-runtime-lite
+    target: $SNAP/pyqt5-runtime-core22-lite
+    default-provider: pyqt5-runtime-core22-lite
 
 
 parts:
@@ -69,11 +71,9 @@ parts:
 
   speedx:
       plugin: python
-      python-version: python3
       source: .
       python-packages:
         - psutil
         - py-cpuinfo
         - cryptography
         - requests
-      build-attributes: [ keep-execstack ]
