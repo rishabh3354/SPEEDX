@@ -10,6 +10,13 @@
 -   CPU Usage monitor. ( CPU percentage, Temp C, CPU Name etc)
 -   App settings for adjust frequencies and measure units.
 
+**NOTE**
+
+If CPU Temp is not Coming/not accurate in the System Monitor, then run below command in your Terminal/Shell.
+
+    sudo snap connect speedx:hardware-observe
+
+
 ## Install SPEEDX on Linux Desktop:
 
 **Snap**
