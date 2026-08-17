@@ -31,6 +31,4 @@ and run
 
 `speedx`
 
-<sub><sup>
-keywords: SpeedX, Linux system monitor, CPU monitor, RAM monitor, memory monitor, internet speed monitor, network monitor, bandwidth monitor, CPU usage, RAM usage, performance monitor, resource monitor, Ubuntu system monitor, Linux desktop utility, real-time system monitor, live CPU graphs, live RAM graphs, upload speed monitor, download speed monitor, lightweight system monitor
-</sub></sup>
+
