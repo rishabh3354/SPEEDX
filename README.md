@@ -48,12 +48,11 @@ snap install speedx
 Some features need permissions that the Snap Store may not connect automatically:
 
 ```
-sudo snap connect speedx:hardware-observe   # CPU temperature
+sudo snap connect speedx:hardware-observe   # CPU temperature and battery details
 sudo snap connect speedx:system-observe     # process list
 sudo snap connect speedx:mount-observe      # disk volumes
 sudo snap connect speedx:process-control    # ending processes
 sudo snap connect speedx:network-manager-observe   # Wi-Fi name, signal and band
-sudo snap connect speedx:battery-observe    # battery details
 ```
 
 ## Run from source
