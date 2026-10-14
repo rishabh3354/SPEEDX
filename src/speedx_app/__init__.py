@@ -3,7 +3,7 @@
 APP_NAME = "SpeedX"
 APP_ID = "speedx"
 ORG_NAME = "warlordsoft"
-VERSION = "2026.10.1"
+VERSION = "2026.10.2"
 
 WEBSITE_URL = "https://warlordsoftwares.com/apps/linux-apps/"
 FEEDBACK_URL = "https://warlordsoftwares.com/contact-us/"

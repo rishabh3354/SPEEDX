@@ -19,6 +19,7 @@ from .netinfo import NetworkInfo
 HISTORY_SECONDS = 120
 PARTITION_INTERVAL = 15.0
 NETINFO_INTERVAL = 5.0
+BLOCKED_RETRY = 60.0      # seconds before re-trying a sensor the sandbox denied
 
 
 class _Sampler(QObject):
@@ -35,6 +36,8 @@ class _Sampler(QObject):
         self._last_disk = None
         self._last_partitions = 0.0
         self._last_netinfo = 0.0
+        self._temp_retry = 0.0    # when an unreadable sensor may be tried again
+        self._disk_retry = 0.0
         self._tick = 0
         self._ncpu = psutil.cpu_count() or 1
         self._physical = {}
@@ -68,6 +71,19 @@ class _Sampler(QObject):
     def set_interface(self, name):
         self.interface = name
         self._last_net = None
+
+    def _temperature(self, now):
+        """CPU temperature, backing off when no sensor is readable.
+
+        Without the snap hardware-observe interface every sensor read is denied
+        (and logged by AppArmor), so don't retry every second.
+        """
+        if now < self._temp_retry:
+            return None
+        temp = system.cpu_temperature()
+        if temp is None:
+            self._temp_retry = now + BLOCKED_RETRY
+        return temp
 
     def _is_physical(self, name):
         if name not in self._physical:
@@ -135,7 +151,7 @@ class _Sampler(QObject):
             "cpu": sum(cores) / len(cores) if cores else 0.0,
             "cpu_cores": cores,
             "cpu_freq": system.cpu_frequency(),
-            "cpu_temp": system.cpu_temperature(),
+            "cpu_temp": self._temperature(now),
             "load": system.load_average(),
             "uptime": time.time() - psutil.boot_time(),
             "latency": self.probe.latency,
@@ -177,10 +193,13 @@ class _Sampler(QObject):
         snap.update(net_down=down, net_up=up, net_rx_delta=rx_all, net_tx_delta=tx_all)
 
         read = write = 0.0
-        try:
-            disk = psutil.disk_io_counters()
-        except (OSError, RuntimeError):
-            disk = None
+        disk = None
+        if now >= self._disk_retry:
+            try:
+                disk = psutil.disk_io_counters()
+            except (OSError, RuntimeError):
+                # e.g. /proc/diskstats blocked in a snap without hardware-observe
+                self._disk_retry = now + BLOCKED_RETRY
         if disk and self._last_disk:
             read = max(0, disk.read_bytes - self._last_disk.read_bytes) / dt
             write = max(0, disk.write_bytes - self._last_disk.write_bytes) / dt

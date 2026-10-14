@@ -8,7 +8,7 @@ from . import APP_NAME
 from . import formatting as fmt
 
 try:
-    from PyQt5.QtDBus import QDBusArgument, QDBusConnection, QDBusInterface
+    from PyQt5.QtDBus import QDBusArgument, QDBusConnection, QDBusMessage
 except ImportError:  # QtDBus is optional
     QDBusConnection = None
 
@@ -19,20 +19,22 @@ CPU_SUSTAIN = 30    # seconds CPU must stay high before alerting
 class Notifier:
     def __init__(self, tray=None):
         self.tray = tray
-        self._dbus = None
+        self._bus = None
         if QDBusConnection is not None:
             bus = QDBusConnection.sessionBus()
             if bus.isConnected():
-                iface = QDBusInterface("org.freedesktop.Notifications", "/org/freedesktop/Notifications",
-                                       "org.freedesktop.Notifications", bus)
-                if iface.isValid():
-                    self._dbus = iface
+                self._bus = bus
 
     def notify(self, title, message):
-        if self._dbus is not None:
-            reply = self._dbus.call("Notify", APP_NAME, QDBusArgument(0, QMetaType.UInt), "speedx", title,
-                                    message, QDBusArgument([], QMetaType.QStringList), {}, 8000)
-            if not reply.errorName():
+        if self._bus is not None:
+            # A direct call (no QDBusInterface) avoids introspecting the notification
+            # service, which snap confinement does not allow.
+            msg = QDBusMessage.createMethodCall("org.freedesktop.Notifications", "/org/freedesktop/Notifications",
+                                                "org.freedesktop.Notifications", "Notify")
+            msg.setArguments([APP_NAME, QDBusArgument(0, QMetaType.UInt), "speedx", title, message,
+                              QDBusArgument([], QMetaType.QStringList), {}, 8000])
+            reply = self._bus.call(msg, timeout=3000)
+            if reply.type() == QDBusMessage.ReplyMessage:
                 return
         if self.tray is not None:
             self.tray.show_message(title, message)

@@ -6,12 +6,17 @@ of XFCE, MATE and Budgie) render the `XAyatanaLabel` property as text in the
 panel, which is how SpeedX shows live speed in the top bar. This module talks
 D-Bus directly through the pure Python `jeepney` library.
 
+The item is exported at /org/ayatana/NotificationItem/<id> and registered by
+object path, exactly like libayatana-appindicator. This matters for snaps: the
+unity7 interface only lets confined apps emit the XAyatanaNew* signals (label
+updates) and dbusmenu signals from those paths, so the Qt-style
+/StatusNotifierItem + /MenuBar layout loses its label under strict confinement.
+
 A background thread receives method calls; replies and signals may be sent
 from any thread (jeepney's threading connection serialises sends).
 """
 
 import itertools
-import os
 import sys
 import threading
 from array import array
@@ -22,9 +27,9 @@ from jeepney.io.threading import ReceiveStopped, open_dbus_connection
 
 WATCHER = DBusAddress("/StatusNotifierWatcher", bus_name="org.kde.StatusNotifierWatcher",
                       interface="org.kde.StatusNotifierWatcher")
-ITEM_PATH = "/StatusNotifierItem"
+ITEM_PATH = "/org/ayatana/NotificationItem/speedx"
 ITEM_IFACE = "org.kde.StatusNotifierItem"
-MENU_PATH = "/MenuBar"
+MENU_PATH = ITEM_PATH + "/Menu"
 MENU_IFACE = "com.canonical.dbusmenu"
 PROPS_IFACE = "org.freedesktop.DBus.Properties"
 INTROSPECT_IFACE = "org.freedesktop.DBus.Introspectable"
@@ -122,7 +127,6 @@ class StatusNotifierItem:
         self._conn = None
         self._thread = None
         self._serial = itertools.count(1000)
-        self.bus_name = f"org.kde.StatusNotifierItem-{os.getpid()}-1"
 
     # ---------------------------------------------------------------- setup
     @staticmethod
@@ -154,7 +158,6 @@ class StatusNotifierItem:
 
     def start(self):
         self._conn = open_dbus_connection("SESSION")
-        self._send(new_method_call(message_bus, "RequestName", "su", (self.bus_name, 4)))
         rule = MatchRule(type="signal", sender=message_bus.bus_name, interface=message_bus.interface,
                          member="NameOwnerChanged", path=message_bus.object_path)
         rule.add_arg_condition(0, WATCHER.bus_name)
@@ -166,15 +169,12 @@ class StatusNotifierItem:
     def stop(self):
         if self._conn is None:
             return
-        try:
-            self._send(new_method_call(message_bus, "ReleaseName", "s", (self.bus_name,)))
-        except OSError:
-            pass
-        self._conn.close()
+        self._conn.close()  # the host drops the item when our connection goes away
         self._conn = None
 
     def _register(self):
-        self._send(new_method_call(WATCHER, "RegisterStatusNotifierItem", "s", (self.bus_name,)))
+        # registering an object path (not a bus name) makes the host use our unique name + path
+        self._send(new_method_call(WATCHER, "RegisterStatusNotifierItem", "s", (ITEM_PATH,)))
 
     def _send(self, msg):
         if self._conn is not None:

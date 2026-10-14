@@ -1,6 +1,6 @@
 name: speedx
 base: core22
-version: '2026.10.1'
+version: '2026.10.2'
 summary: Internet speed test, live network monitor and system monitor
 description: |
   **SpeedX** shows how fast your internet really is, and what your computer is
