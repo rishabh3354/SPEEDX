@@ -1,11 +1,11 @@
 [Desktop Entry]
-Version=2026.7.2
-GenericName=speedx
-Name=Speedx
+Version=1.0
 Type=Application
+Name=SpeedX
+GenericName=System Monitor
+Comment=Internet speed test, network and system monitor
 Icon=speedx.png
-Keywords=internetspeed;systemmoniter;ramusage;cpuusage;networkbandwidth;
 Exec=speedx %F
-Categories=Utility;Qt;
 Terminal=false
-Name[en_IN]=SpeedX
+Categories=System;Monitor;Network;Utility;Qt;
+Keywords=internet;speed;speedtest;network;bandwidth;data usage;system monitor;cpu;ram;memory;disk;process;

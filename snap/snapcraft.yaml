@@ -1,8 +1,42 @@
 name: speedx
 base: core22
-version: '2026.7.2'
-summary: Realtime internet speed monitor
-description: A linux based desktop application for Monitoring Internet speed with system monitor in cool graphics.
+version: '2026.10.1'
+summary: Internet speed test, live network monitor and system monitor
+description: |
+  **SpeedX** shows how fast your internet really is, and what your computer is
+  doing, in one clean, lightweight app.
+
+  **Internet speed test**
+  - Measure download, upload, ping and jitter in about 20 seconds
+  - Automatic background tests every 1 to 24 hours, with a speed-over-time chart
+  - Alerts when your speed drops far below normal, with CSV export as proof for your ISP
+
+  **Live speed in your top bar**
+  - Real-time download and upload speed next to the clock (Ubuntu, GNOME, XFCE, MATE)
+  - Always-on-top mini speed meter you can place anywhere
+
+  **Connection quality and outages**
+  - Latency, jitter and packet loss, measured continuously
+  - Outage log with notifications when your internet drops and comes back
+  - Wi-Fi details: network name, signal strength, 2.4/5/6 GHz band, channel and link rate
+
+  **Data usage**
+  - Daily and monthly usage, including traffic while SpeedX was closed
+  - Monthly data cap with billing day and warnings at 80% and 100%
+
+  **System monitor**
+  - CPU (per core, frequency, temperature), memory, disks and network graphs
+  - 30 days of history: see what happened while you were away
+  - Battery health, charge cycles, power draw and time remaining
+  - Process manager that groups processes by app, so you can close a whole app at once
+
+  Dark and light themes, launch at login, and no account needed. Your data stays
+  on your computer.
+
+  For CPU temperature, disk, battery and Wi-Fi details, connect the optional
+  interfaces:
+    sudo snap connect speedx:hardware-observe
+    sudo snap connect speedx:network-manager-observe
 grade: stable
 confinement: strict
 
@@ -30,7 +64,14 @@ apps:
       - opengl
       - hardware-observe
       - network-status
+      - network-observe
+      - network-manager-observe
+      - battery-observe
+      - system-observe
+      - mount-observe
+      - process-control
     desktop: speedx.desktop
+    autostart: speedx.desktop
     environment:
       DISABLE_WAYLAND: 1
 
@@ -74,6 +115,4 @@ parts:
       source: .
       python-packages:
         - psutil
-        - py-cpuinfo
-        - cryptography
-        - requests
+        - jeepney
