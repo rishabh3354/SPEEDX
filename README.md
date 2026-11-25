@@ -1,6 +1,6 @@
 # SpeedX
 
-**SpeedX** is a fast, lightweight **internet speed test, network monitor and system monitor** for Linux.
+SpeedX is an internet speed test, network monitor and system monitor for Linux.
 
 ## Screenshots
 
